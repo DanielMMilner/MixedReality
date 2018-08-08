@@ -18,7 +18,8 @@ public class GunController : MonoBehaviour {
 	}
 
     void FixedUpdate() {
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetButton("Fire1")){
+            Debug.Log("Got input");
             Fire();
         }
     }

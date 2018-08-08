@@ -319,8 +319,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850730992894404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.6750652, z: -0, w: 0.73775804}
+  m_LocalPosition: {x: -28.29, y: 5.83, z: -0.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4587520633816736}
@@ -328,7 +328,7 @@ Transform:
   - {fileID: 4562275514082094}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.91801, z: 0}
 --- !u!4 &4562275514082094
 Transform:
   m_ObjectHideFlags: 1
@@ -349,7 +349,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372541880982678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5196456, y: -5.83, z: 28.266499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4766909944503646}
@@ -528,6 +528,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -669,7 +670,6 @@ MonoBehaviour:
   FloorQuad: {fileID: 1520281459093612, guid: 08d25ccfbbc595b4a820c7edd551d095, type: 2}
   boundaryHeight: 10
   opaqueTrackingSpaceType: 1
-  transparentTrackingSpaceType: 0
   renderFloor: 1
   renderBoundary: 1
 --- !u!114 &114180319962519104
@@ -685,6 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseLastLayer: 1
   TargetSortingLayerName: Default
+  renderers: []
 --- !u!114 &114225625019075894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,9 +789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimateControllerModel: 1
-  AlwaysUseAlternateLeftModel: 0
+  AlwaysUseAlternateLeftModel: 1
   AlwaysUseAlternateRightModel: 0
-  AlternateLeftController: {fileID: 1097318689274706, guid: 869d340c69dbcef459070c1a159d38ac,
+  AlternateLeftController: {fileID: 1454510583247374, guid: 643845e0950009b42b2d0880809f8f70,
     type: 2}
   AlternateRightController: {fileID: 1097318689274706, guid: 869d340c69dbcef459070c1a159d38ac,
     type: 2}
@@ -838,6 +839,7 @@ MonoBehaviour:
   EnableTeleport: 1
   EnableRotation: 1
   EnableStrafe: 1
+  StayOnTheFloor: 0
   RotationSize: 45
   StrafeAmount: 0.5
   teleportMarker: {fileID: 1503526479864244, guid: 10d95b99055c6ad40b735cc8b3593745,

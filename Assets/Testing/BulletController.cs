@@ -7,9 +7,12 @@ public class BulletController : MonoBehaviour {
     public GameObject explosion;
 
     void OnTriggerEnter(Collider other) {
-        Debug.Log("Collision");
-        Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+        if (other.CompareTag("Cube")) {
+            Debug.Log("Collision");
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        
     }
 }

@@ -585,7 +585,7 @@ PlayerSettings:
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities:
     WindowsStoreApps:
-      HumanInterfaceDevice: False
+      HumanInterfaceDevice: True
       InternetClient: False
       InternetClientServer: False
       PrivateNetworkClientServer: False
