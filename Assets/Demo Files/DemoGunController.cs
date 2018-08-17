@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using VolumetricLines;
+﻿using UnityEngine;
 
 public class DemoGunController : MonoBehaviour {
 
     [Header("Gun Settings")]
-    public float recoilTime = 0.3f;
-    private float _recoilTime = 0.0f;
-    public float maxRecoil = 5f;
-    private float _maxRecoil_x;
-    private float _maxRecoil_y;
-    public float recoilSpeed = 2f;
+    public float recoilTime = 0.3f;         // How long to recoil for
+    private float _recoilTime = 0.0f;       // Internal variable to track the recoil cooldown
+    public float maxRecoil = 5f;            // The amount to recoil by (in random range)
+    private float _maxRecoil_x;             // Internal record for x and y direction
+    private float _maxRecoil_y;             //
+    public float recoilSpeed = 10f;         // How fast to carry out the recoil
+    private float _recoilSpeed = 0f;
 
     [Header("Bullet Settings")]
     public GameObject bulletPrefab;
@@ -42,30 +40,32 @@ public class DemoGunController : MonoBehaviour {
             Destroy(bullet, bulletLifespan);
             _bulletCooldown = bulletCooldown;
 
-            StartRecoil(recoilTime, maxRecoil, 10f);
+            StartRecoil(recoilTime, maxRecoil, recoilSpeed);
         }
     }
 
 
-    void StartRecoil(float recoilTime, float maxRecoil, float recoilSpeedParam)
+    void StartRecoil(float recoilTime, float maxRecoil, float recoilSpeed)
     {
         _recoilTime = recoilTime;
         _maxRecoil_x = maxRecoil;
-        recoilSpeed = recoilSpeedParam;
+        _recoilSpeed = recoilSpeed;
         _maxRecoil_y = Random.Range(-maxRecoil, maxRecoil);
     }
 
     void UpdateRecoil()
     {
+        // If currently recoiling
         if (_recoilTime > 0f)
         {
             Quaternion maxRecoil = Quaternion.Euler(-_maxRecoil_x, _maxRecoil_y, 0f);
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, maxRecoil, Time.deltaTime * recoilSpeed);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, maxRecoil, Time.deltaTime * _recoilSpeed);
             _recoilTime -= Time.deltaTime;
-        } else
-        {
+        
+        // Otherwise returning to correct orientation
+        } else {
             _recoilTime = 0f;
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, Time.deltaTime * recoilSpeed / 2);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, Time.deltaTime * _recoilSpeed / 2);
         }
     }
 }

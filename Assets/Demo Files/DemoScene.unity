@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 532083210}
-  aggroRange: 3
+  aggroRange: 5
   stoppingRange: 2
   flightSpeed: 0.05
   bulletPrefab: {fileID: 1534350735786846, guid: a52e10e476e334743aad1a78d1663c7b,
@@ -615,6 +615,18 @@ Prefab:
     - target: {fileID: 4181236269312582, guid: 41d7acf595ed16844a56830bd840b577, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181236269312582, guid: 41d7acf595ed16844a56830bd840b577, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181236269312582, guid: 41d7acf595ed16844a56830bd840b577, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181236269312582, guid: 41d7acf595ed16844a56830bd840b577, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41d7acf595ed16844a56830bd840b577, type: 2}
