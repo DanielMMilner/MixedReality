@@ -449,6 +449,7 @@ MonoBehaviour:
   m_cannonRot: {fileID: 490826}
   m_muzzle: {fileID: 490824}
   m_shotPrefab: {fileID: 163672, guid: fcfb51ced5e88fc4a93a8eea0822d58a, type: 2}
+  m_guiTexture: {fileID: 0}
 --- !u!136 &13690820
 CapsuleCollider:
   m_ObjectHideFlags: 1

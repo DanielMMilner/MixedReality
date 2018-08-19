@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36f14fc52a556dc4aa3a9370f4926096
+guid: 417118f5f662460478900809a62ae3fc
 labels:
 - sci-fi
 - ship
@@ -9,6 +9,8 @@ labels:
 timeCreated: 1514329190
 licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
