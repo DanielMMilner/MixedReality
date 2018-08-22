@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.XR.WSA.Input;
 
 public class DemoGunController : MonoBehaviour {
 
@@ -24,7 +25,15 @@ public class DemoGunController : MonoBehaviour {
 	void Update () {
         UpdateRecoil();
         Fire();
+
+
+
 	}
+
+    private void InteractionSourcePressed(InteractionSourcePressedEventArgs obj)
+    {
+        Debug.Log("Hi");
+    }
 
     void Fire()
     {
