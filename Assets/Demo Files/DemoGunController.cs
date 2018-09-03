@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+using UnityEngine.XR.WSA.Input;
 
 public class DemoGunController : MonoBehaviour {
 
