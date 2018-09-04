@@ -11,8 +11,11 @@ public class TurretBulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Create an explosion and destroy yourself.
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
+        if (!other.tag.Equals("Enemy"))
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
 
         // In future, damage the players ship.
     }
