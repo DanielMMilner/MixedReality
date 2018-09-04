@@ -31,14 +31,11 @@ public class TurretController : MonoBehaviour {
         if(distance < range)
         {
             Debug.DrawLine(transform.position, player.transform.position, Color.red);
-            if(remainingCooldownTime <= 0f)
+            transform.LookAt(player.transform);
+
+            if (remainingCooldownTime <= 0f)
             {
-                // Fire
-                Debug.Log("Shoot233");
-                transform.LookAt(player.transform);
-
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
-
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
                 
                 Destroy(bullet, bulletLifespan);
