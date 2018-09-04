@@ -6,18 +6,22 @@ using UnityEngine;
 public class TurretController : MonoBehaviour {
 
     private GameObject player;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public float bulletSpeed = 5.0f;
+    public float bulletLifespan = 5.0f;
 
     public float range = 100;
 
     // Time in seconds
-    public float cooldownTime = 5;
+    public float cooldownTime = 1f;
+    private float remainingCooldownTime = 0f;
 
-    public GameObject bullet;
-    
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         player = GameObject.FindWithTag("Player");
-	}
+        remainingCooldownTime = cooldownTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,16 +31,24 @@ public class TurretController : MonoBehaviour {
         if(distance < range)
         {
             Debug.DrawLine(transform.position, player.transform.position, Color.red);
-            if(cooldownTime <= 0)
+            if(remainingCooldownTime <= 0f)
             {
                 // Fire
+                Debug.Log("Shoot233");
+                transform.LookAt(player.transform);
 
+                var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
+
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+                
+                Destroy(bullet, bulletLifespan);
+                remainingCooldownTime = cooldownTime;
             }
         }
         else
         {
             Debug.DrawLine(transform.position, player.transform.position, Color.green);
         }
-        cooldownTime -= Time.fixedDeltaTime;
+        remainingCooldownTime -= Time.fixedDeltaTime;
 	}
 }
