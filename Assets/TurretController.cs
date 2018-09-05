@@ -19,7 +19,7 @@ public class TurretController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("PlayerShip");
         remainingCooldownTime = cooldownTime;
     }
 	

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Tip
+  - PlayerShip
   layers:
   - Default
   - TransparentFX

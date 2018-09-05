@@ -14,6 +14,7 @@ public class TurretBulletController : MonoBehaviour
         if (!other.tag.Equals("Enemy"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
 

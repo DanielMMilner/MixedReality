@@ -7,7 +7,7 @@ using UnityEngine;
 public class DemoDroneController : MonoBehaviour {
 
     [Header("Drone Movement Settings")]
-    public Transform player;                
+    private Transform player;                
     public float aggroRange = 5f;           // The minimum range for it to respond to the player
     public float stoppingRange = 2f;        // How close to get to the player
     private bool _aggro = false;            // Internally track state
@@ -20,6 +20,13 @@ public class DemoDroneController : MonoBehaviour {
     public float bulletLifespan = 5.0f;     // Maximum lifespan, if nothing hit by then.
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate () {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -39,8 +46,10 @@ public class DemoDroneController : MonoBehaviour {
         // Move to within range of the player, and start firing
         if (distanceToPlayer > stoppingRange) {
             transform.position = Vector3.MoveTowards(transform.position, player.position, flightSpeed);
+        }else{
+            transform.position = Vector3.MoveTowards(transform.position, player.position, -flightSpeed);
         }
-
+        
         Fire();
     }
 

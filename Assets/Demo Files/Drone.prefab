@@ -9,44 +9,75 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1822415533239574}
+  m_RootGameObject: {fileID: 1403460828190524}
   m_IsPrefabParent: 1
---- !u!1 &1822415533239574
+--- !u!1 &1064463055433294
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4181236269312582}
-  - component: {fileID: 33059726472437176}
-  - component: {fileID: 23992601081456772}
+  - component: {fileID: 4694791639710436}
   m_Layer: 0
-  m_Name: Drone
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4181236269312582
+--- !u!1 &1403460828190524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4354029140313254}
+  - component: {fileID: 33785558994957950}
+  - component: {fileID: 23492660333284168}
+  - component: {fileID: 114834525290509662}
+  - component: {fileID: 65466990279661114}
+  m_Layer: 0
+  m_Name: Drone
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4354029140313254
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1822415533239574}
+  m_GameObject: {fileID: 1403460828190524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -47.3, y: 2.98, z: -101.21}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4694791639710436}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23992601081456772
+--- !u!4 &4694791639710436
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064463055433294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4354029140313254}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23492660333284168
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1822415533239574}
+  m_GameObject: {fileID: 1403460828190524}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -75,10 +106,42 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33059726472437176
+--- !u!33 &33785558994957950
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1822415533239574}
+  m_GameObject: {fileID: 1403460828190524}
   m_Mesh: {fileID: 4300000, guid: 28723f10c2a8e094a9351e892f5271b8, type: 3}
+--- !u!65 &65466990279661114
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403460828190524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5754952, y: 3.3034472, z: 3.9624016}
+  m_Center: {x: -0.000000059604645, y: 0.1767767, z: 0.00000011920929}
+--- !u!114 &114834525290509662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403460828190524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05574c167d5d3141aa1320b5c09ce53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aggroRange: 100
+  stoppingRange: 5
+  flightSpeed: 0.05
+  bulletPrefab: {fileID: 1534350735786846, guid: a52e10e476e334743aad1a78d1663c7b,
+    type: 2}
+  bulletSpawn: {fileID: 4694791639710436}
+  bulletSpeed: 5
+  bulletLifespan: 5
+  bulletCooldown: 1

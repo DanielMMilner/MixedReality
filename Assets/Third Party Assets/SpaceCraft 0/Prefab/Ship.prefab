@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4957237827485478}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 64581152625780290}
   m_Layer: 0
   m_Name: Ship
-  m_TagString: Player
+  m_TagString: PlayerShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
