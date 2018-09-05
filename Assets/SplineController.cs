@@ -16,6 +16,8 @@ public class SplineController : MonoBehaviour {
     public float lookPointDist = 10;
     private Vector3 lookPoint;
 
+    private bool start = false;
+
     // Use this for initialization
     void Start () {
         mathCurve = GetComponent<BGCcMath>();
@@ -25,8 +27,13 @@ public class SplineController : MonoBehaviour {
 	void Update () {
 	}
 
+
+    public void StartGame() {
+        this.start = true;
+    }
     private void FixedUpdate()
     {
+        if (!start) return;
         //d = s * t
         distance += speed * Time.fixedDeltaTime;
 
