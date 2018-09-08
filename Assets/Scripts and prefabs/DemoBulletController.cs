@@ -11,7 +11,7 @@ public class DemoBulletController : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if (!other.tag.Equals("DroneBullet") && !other.tag.Equals("PlayerBullet"))
+        if (!other.tag.Equals("Bullet"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
@@ -20,7 +20,5 @@ public class DemoBulletController : MonoBehaviour {
                 Destroy(other.gameObject);
             }
         }
-
-        // In future, damage the drone or just destroy it.
     }
 }

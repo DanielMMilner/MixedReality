@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour {
 
-    private GameObject player;
+    private GameObject ship;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed = 5.0f;
@@ -19,7 +19,7 @@ public class TurretController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        player = GameObject.FindWithTag("PlayerShip");
+        ship = GameObject.FindWithTag("PlayerShip");
         remainingCooldownTime = cooldownTime;
     }
 	
@@ -27,11 +27,11 @@ public class TurretController : MonoBehaviour {
 	void Update () {
         // Raycast to object
         // Determine distance between objects
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+        float distance = Vector3.Distance(transform.position, ship.transform.position);
         if(distance < range)
         {
-            Debug.DrawLine(transform.position, player.transform.position, Color.red);
-            transform.LookAt(player.transform);
+            Debug.DrawLine(transform.position, ship.transform.position, Color.red);
+            transform.LookAt(ship.transform);
 
             if (remainingCooldownTime <= 0f)
             {
@@ -44,7 +44,7 @@ public class TurretController : MonoBehaviour {
         }
         else
         {
-            Debug.DrawLine(transform.position, player.transform.position, Color.green);
+            Debug.DrawLine(transform.position, ship.transform.position, Color.green);
         }
         remainingCooldownTime -= Time.fixedDeltaTime;
 	}

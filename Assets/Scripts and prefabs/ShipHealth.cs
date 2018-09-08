@@ -7,7 +7,7 @@ public class ShipHealth : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
-        Debug.Log("Ship Health" + health);
+        //Debug.Log("Ship Health" + health);
         health -= amount;
     }
 }
