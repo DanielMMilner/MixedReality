@@ -5,7 +5,11 @@ licenseType: Pro
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bulletPrefab: {fileID: 1534350735786846, guid: a52e10e476e334743aad1a78d1663c7b,
+      type: 2}
+  - bulletSpawn: {fileID: 4694791639710436, guid: 0b86f3a8017cb62498664982ef5b1de5,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

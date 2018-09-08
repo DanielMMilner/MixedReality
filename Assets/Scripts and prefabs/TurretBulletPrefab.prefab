@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 33004439879970916}
   - component: {fileID: 114893134056870080}
   - component: {fileID: 54489868290183324}
-  - component: {fileID: 114548593701983262}
   - component: {fileID: 65078331004380246}
+  - component: {fileID: 114327347350966272}
   m_Layer: 0
   m_Name: TurretBulletPrefab
   m_TagString: TurretBullet
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0.15}
---- !u!114 &114548593701983262
+--- !u!114 &114327347350966272
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,11 +121,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1577179236631498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16525ee45511d842a6e2f757727e10d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87ee9f4adc9ab2d42835ba97b077aea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 198358362391004328, guid: ebcde507a2edbcc4da3ad7810a6b6965,
     type: 2}
+  damage: 10
 --- !u!114 &114893134056870080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,5 +143,5 @@ MonoBehaviour:
   m_startPos: {x: 0, y: 0, z: 0}
   m_endPos: {x: 0, y: 0, z: 0.1}
   m_lineColor: {r: 0.11724126, g: 1, b: 0, a: 1}
-  m_lineWidth: 0.8
-  m_lightSaberFactor: 1
+  m_lineWidth: 0.6
+  m_lightSaberFactor: 0.5

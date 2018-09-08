@@ -9,6 +9,7 @@ TagManager:
   - ARCamera
   - DroneBullet
   - TurretBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

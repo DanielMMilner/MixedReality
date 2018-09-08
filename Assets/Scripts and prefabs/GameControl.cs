@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameControl : MonoBehaviour {
+    public GameObject playerParent;
     public GameObject player;
+    public GameObject ship;
     public GameObject arCamera;
     public SplineController splineController;
     public GameObject enemies;
 
-    public bool arTesting;
+    private PlayerHealth playerHealth;
+    private ShipHealth shipHealth;
+
+    public bool SpawnEnemies;
 
     private bool gameStarted = false;
 
 
     // Use this for initialization
     void Start () {
-        player.SetActive(false);
+        playerParent.SetActive(false);
         enemies.SetActive(false);
-        arCamera.SetActive(true);      
+        arCamera.SetActive(true);
+
+        playerHealth = player.GetComponent<PlayerHealth>();
+        shipHealth = ship.GetComponent<ShipHealth>();
     }
 	
 	// Update is called once per frame
@@ -27,12 +35,22 @@ public class GameControl : MonoBehaviour {
             gameStarted = true;
             Debug.Log("Game Started");
             arCamera.SetActive(false);
-            player.SetActive(true);
+            playerParent.SetActive(true);
 
-            if(!arTesting)
+            if(SpawnEnemies)
                 enemies.SetActive(true);
 
             splineController.StartGame();
         }
+    }
+
+    public void DamageShip(int amount)
+    {
+        shipHealth.TakeDamage(amount);
+    }
+
+    public void DamagePlayer(int amount)
+    {
+        playerHealth.TakeDamage(amount);
     }
 }

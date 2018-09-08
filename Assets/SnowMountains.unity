@@ -536,6 +536,10 @@ Prefab:
       propertyPath: m_Name
       value: PlayerParent
       objectReference: {fileID: 0}
+    - target: {fileID: 1281408331867034, guid: 01d681c3dd5ecd6408be5f06d7a7dd21, type: 2}
+      propertyPath: m_Name
+      value: SciFiHandGun
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64581152625780290, guid: 01d681c3dd5ecd6408be5f06d7a7dd21, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 01d681c3dd5ecd6408be5f06d7a7dd21, type: 2}
@@ -1528,6 +1532,18 @@ CapsuleCollider:
   m_Height: 12.765476
   m_Direction: 1
   m_Center: {x: 2.171074, y: 0.6677377, z: 0}
+--- !u!114 &448826405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448826399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3565bcf63989b94498196b8da4d0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &506442529
 Prefab:
   m_ObjectHideFlags: 0
@@ -5779,6 +5795,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.079514, y: 11.751728, z: 31.385803}
   m_Center: {x: 0.042915344, y: 16.329126, z: -40.998383}
+--- !u!114 &2033928919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033928913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f999cb237f719f1478c1d1fb62ca1ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
 --- !u!4 &2039465974 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4721774444064998, guid: 17cf5d3ffb484a94aa8d72efa788c807,
@@ -6023,7 +6051,7 @@ GameObject:
   - component: {fileID: 2089841636}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6039,11 +6067,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91097ed6382d5f4428811098c0c83d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1878859350}
+  playerParent: {fileID: 1878859350}
+  player: {fileID: 448826399}
+  ship: {fileID: 2033928913}
   arCamera: {fileID: 2133311470}
   splineController: {fileID: 1081489439}
   enemies: {fileID: 1031830197}
-  arTesting: 0
+  SpawnEnemies: 1
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0

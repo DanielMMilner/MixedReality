@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class TurretBulletController : MonoBehaviour
+public class DroneBulletController : MonoBehaviour
 {
 
     public ParticleSystem explosion;
-    public int damage = 30;
+    public int damage = 5;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,15 +18,14 @@ public class TurretBulletController : MonoBehaviour
             Destroy(this.gameObject);
             if (other.tag.Equals("MainCamera"))
             {
-                Debug.Log("Turret hit player");
-
+                Debug.Log("Drone hit player");
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
                 gameControl.DamagePlayer(damage);
             }
             else if (other.tag.Equals("PlayerShip"))
             {
-                Debug.Log("Turret hit Ship");
+                Debug.Log("Drone hit Ship");
 
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
