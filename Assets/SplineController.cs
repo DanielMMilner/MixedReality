@@ -31,6 +31,7 @@ public class SplineController : MonoBehaviour {
     public void StartGame() {
         this.start = true;
     }
+
     private void FixedUpdate()
     {
         if (!start) return;

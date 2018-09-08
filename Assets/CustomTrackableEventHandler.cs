@@ -8,24 +8,13 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     private TrackableBehaviour mTrackableBehaviour;
     public GameObject arCamera;
-    public GameObject player;
-    public SplineController splineController;
-
-    private bool committed = false;
 
     // Use this for initialization
     void Start()
     {
-        player.SetActive(false);
-
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
-    }
-
-    void FixedUpdate()
-    {
-        Commit();
     }
 
     public void OnTrackableStateChanged(
@@ -36,16 +25,14 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-            Debug.Log("Trackable hello" + mTrackableBehaviour.TrackableName + " found");
+            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
             OnTrackingFound();
 
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NOT_FOUND)
         {
-
             OnTrackingLost();
-
         }
         else
         {
@@ -74,21 +61,6 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
         foreach (var component in canvasComponents)
             component.enabled = true;
     }
-
-    protected virtual void Commit()
-    {
-        if (committed) return;
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            committed = true;
-            Debug.Log("Game Started");
-            //OnTrackingLost();
-            arCamera.SetActive(false);
-            player.SetActive(true);
-            splineController.StartGame();
-        }
-    }
-
 
     protected virtual void OnTrackingLost()
     {

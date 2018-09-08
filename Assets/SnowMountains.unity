@@ -2629,8 +2629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arCamera: {fileID: 2133311470}
-  player: {fileID: 1878859350}
-  splineController: {fileID: 1081489439}
 --- !u!1001 &922131889
 Prefab:
   m_ObjectHideFlags: 0
@@ -2849,7 +2847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031830198
 Transform:
   m_ObjectHideFlags: 0
@@ -5946,6 +5944,7 @@ MonoBehaviour:
   arCamera: {fileID: 2133311470}
   splineController: {fileID: 1081489439}
   enemies: {fileID: 1031830197}
+  arTesting: 0
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
