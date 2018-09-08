@@ -4,24 +4,27 @@ using UnityEngine;
 using Vuforia;
 
 
-public class turretSpawnScript : MonoBehaviour, ITrackableEventHandler
+public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     private TrackableBehaviour mTrackableBehaviour;
-    public GameObject ArCamera;
-    public GameObject fpsCamera;
+    public GameObject arCamera;
+    public GameObject player;
     public SplineController splineController;
 
     private bool committed = false;
 
-	// Use this for initialization
-	void Start () {
-        fpsCamera.SetActive(false);
+    // Use this for initialization
+    void Start()
+    {
+        player.SetActive(false);
+
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         Commit();
     }
 
@@ -59,8 +62,6 @@ public class turretSpawnScript : MonoBehaviour, ITrackableEventHandler
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
 
-       
-
         // Enable rendering:
         foreach (var component in rendererComponents)
             component.enabled = true;
@@ -76,13 +77,14 @@ public class turretSpawnScript : MonoBehaviour, ITrackableEventHandler
 
     protected virtual void Commit()
     {
-        if (!committed) return;
+        if (committed) return;
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            Debug.Log("Whatever");
+            committed = true;
+            Debug.Log("Game Started");
             //OnTrackingLost();
-            ArCamera.SetActive(false);
-            fpsCamera.SetActive(true);
+            arCamera.SetActive(false);
+            player.SetActive(true);
             splineController.StartGame();
         }
     }

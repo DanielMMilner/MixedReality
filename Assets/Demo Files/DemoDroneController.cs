@@ -20,12 +20,10 @@ public class DemoDroneController : MonoBehaviour {
     public float bulletLifespan = 5.0f;     // Maximum lifespan, if nothing hit by then.
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
-    private Rigidbody rb;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate () {
