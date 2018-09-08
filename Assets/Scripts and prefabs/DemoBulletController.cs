@@ -10,13 +10,15 @@ public class DemoBulletController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        // Create an explosion and destroy yourself.
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
 
-        if (other.tag.Equals("Enemy"))
+        if (!other.tag.Equals("DroneBullet") && !other.tag.Equals("PlayerBullet"))
         {
-            Destroy(other.gameObject);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            if (other.tag.Equals("Enemy"))
+            {
+                Destroy(other.gameObject);
+            }
         }
 
         // In future, damage the drone or just destroy it.
