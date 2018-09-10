@@ -1,21 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MountableTurretController : MonoBehaviour {
 
     public float timerStart;
     public GameObject turretCamera;
-    public GameObject fpsCamera;
+    public GameObject player;
 
     private bool timerStarted = false;
     private bool inTurret = false;
+    private MountableTurretGunController mountableTurretGunController;
+    private TurretFPSController turretFPSController;
 
     private float timeLeft;
 
     public void Start()
     {
+        mountableTurretGunController = GetComponent<MountableTurretGunController>();
+        turretFPSController = GetComponentInChildren<TurretFPSController>();
+        mountableTurretGunController.enabled = false;
+
         timeLeft = timerStart;
+        turretFPSController.enabled = false;
     }
 
     public void Update()
@@ -57,7 +62,11 @@ public class MountableTurretController : MonoBehaviour {
     {
         Debug.Log("Entering turret");
         inTurret = true;
-        fpsCamera.SetActive(false);
+
+        turretFPSController.enabled = true;
+        mountableTurretGunController.enabled = true;
+
+        player.SetActive(false);
         turretCamera.SetActive(true);
     }
 
@@ -65,7 +74,11 @@ public class MountableTurretController : MonoBehaviour {
     {
         Debug.Log("Exiting turret");
         inTurret = false;
-        fpsCamera.SetActive(true);
+
+        turretFPSController.enabled = false;
+        mountableTurretGunController.enabled = false;
+
+        player.SetActive(true);
         turretCamera.SetActive(false);
         timeLeft = timerStart;
     }
