@@ -30,7 +30,7 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!gameStarted && Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (!gameStarted && Input.GetKeyDown(KeyCode.Space))
         {
             gameStarted = true;
             Debug.Log("Game Started");

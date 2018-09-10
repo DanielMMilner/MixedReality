@@ -18,15 +18,14 @@ public class DroneBulletController : MonoBehaviour
             Destroy(this.gameObject);
             if (other.tag.Equals("MainCamera"))
             {
-                Debug.Log("Drone hit player");
+                //Debug.Log("Drone hit player");
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
                 gameControl.DamagePlayer(damage);
             }
             else if (other.tag.Equals("PlayerShip"))
             {
-                Debug.Log("Drone hit Ship");
-
+                //Debug.Log("Drone hit Ship");
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
                 gameControl.DamageShip(damage);
