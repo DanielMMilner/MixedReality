@@ -19,7 +19,7 @@ public class TurretBulletController : MonoBehaviour
             Destroy(this.gameObject);
             if (other.tag.Equals("MainCamera"))
             {
-                Debug.Log("Turret hit player");
+                //Debug.Log("Turret hit player");
 
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
@@ -27,7 +27,7 @@ public class TurretBulletController : MonoBehaviour
             }
             else if (other.tag.Equals("PlayerShip"))
             {
-                Debug.Log("Turret hit Ship");
+                //Debug.Log("Turret hit Ship");
 
                 GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
                 GameControl gameControl = gameController.GetComponent<GameControl>();
