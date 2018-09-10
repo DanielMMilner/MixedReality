@@ -32,14 +32,14 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NOT_FOUND)
         {
-            OnTrackingLost();
+            //OnTrackingLost();
         }
         else
         {
             // For combo of previousStatus=UNKNOWN + newStatus=UNKNOWN|NOT_FOUND
             // Vuforia is starting, but tracking has not been lost or found yet
             // Call OnTrackingLost() to hide the augmentations
-            OnTrackingLost();
+            //OnTrackingLost();
         }
     }
 

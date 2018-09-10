@@ -7,6 +7,7 @@ public class GameControl : MonoBehaviour {
     public GameObject player;
     public GameObject ship;
     public GameObject arCamera;
+    public GameObject setUpCamera;
     public SplineController splineController;
     public GameObject enemies;
 
@@ -23,6 +24,7 @@ public class GameControl : MonoBehaviour {
         playerParent.SetActive(false);
         enemies.SetActive(false);
         arCamera.SetActive(true);
+        setUpCamera.SetActive(true);
 
         playerHealth = player.GetComponent<PlayerHealth>();
         shipHealth = ship.GetComponent<ShipHealth>();
@@ -35,6 +37,7 @@ public class GameControl : MonoBehaviour {
             gameStarted = true;
             Debug.Log("Game Started");
             arCamera.SetActive(false);
+            setUpCamera.SetActive(false);
             playerParent.SetActive(true);
 
             if(SpawnEnemies)
