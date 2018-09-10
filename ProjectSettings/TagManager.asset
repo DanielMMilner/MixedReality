@@ -12,6 +12,7 @@ TagManager:
   - PlayerBullet
   - Bullet
   - ShipTarget
+  - MountableTurret
   layers:
   - Default
   - TransparentFX
