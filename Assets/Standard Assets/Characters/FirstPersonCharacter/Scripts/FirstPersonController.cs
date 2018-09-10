@@ -86,8 +86,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayLandingSound()
         {
-            m_AudioSource.clip = m_LandSound;
-            m_AudioSource.Play();
+            //m_AudioSource.clip = m_LandSound;
+            //m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
         }
 
@@ -113,13 +113,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
-                {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
-                    m_Jump = false;
-                    m_Jumping = true;
-                }
+                //if (m_Jump)
+                //{
+                //    m_MoveDir.y = m_JumpSpeed;
+                //    PlayJumpSound();
+                //    m_Jump = false;
+                //    m_Jumping = true;
+                //}
             }
             else
             {
@@ -136,7 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayJumpSound()
         {
-            m_AudioSource.clip = m_JumpSound;
+            //m_AudioSource.clip = m_JumpSound;
             //m_AudioSource.Play();
         }
 

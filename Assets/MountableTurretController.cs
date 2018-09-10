@@ -26,11 +26,11 @@ public class MountableTurretController : MonoBehaviour {
 
             if(timeLeft < 0)
             {
-                Debug.Log("Mounting turret");
-                inTurret = true;
-                fpsCamera.SetActive(false);
-                turretCamera.SetActive(true);
+                EnterTurret();
             }
+        }else if (inTurret && Input.GetKeyDown(KeyCode.Space))
+        {
+            ExitTurret();
         }
     }
 
@@ -47,12 +47,26 @@ public class MountableTurretController : MonoBehaviour {
     {
         if (other.tag.Equals("MainCamera"))
         {
-            Debug.Log("Leaving mountable turret");
-            inTurret = true;
+            Debug.Log("Stopping mountable turret timer");
             timerStarted = false;
             timeLeft = timerStart;
-            fpsCamera.SetActive(true);
-            turretCamera.SetActive(false);
         }
+    }
+
+    private void EnterTurret()
+    {
+        Debug.Log("Entering turret");
+        inTurret = true;
+        fpsCamera.SetActive(false);
+        turretCamera.SetActive(true);
+    }
+
+    private void ExitTurret()
+    {
+        Debug.Log("Exiting turret");
+        inTurret = false;
+        fpsCamera.SetActive(true);
+        turretCamera.SetActive(false);
+        timeLeft = timerStart;
     }
 }

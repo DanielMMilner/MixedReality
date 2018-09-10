@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05574c167d5d3141aa1320b5c09ce53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRange: 100
-  stoppingRange: 5
+  aggroRange: 50
+  stoppingRange: 10
   flightSpeed: 0.05
   bulletPrefab: {fileID: 1534350735786846, guid: a52e10e476e334743aad1a78d1663c7b,
     type: 2}
