@@ -28,15 +28,12 @@ public class TurretFPSController : MonoBehaviour
     private void RotateView()
     {
         float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
-        Debug.Log(cannon.transform.right.y);
         
         if (vertical > 0 && cannon.transform.right.y < minCannonAngle)
         {
             cannon.transform.Rotate(0,-cannonRotationSpeed, 0);
         }else if (vertical < 0 && cannon.transform.right.y > -maxCannonAngle)
         {
-            Debug.Log("Up");
             cannon.transform.Rotate(0, cannonRotationSpeed, 0);
         }
 
