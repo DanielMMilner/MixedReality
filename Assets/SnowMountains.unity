@@ -1308,6 +1308,10 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
+  cannon: {fileID: 449951289}
+  cannonRotationSpeed: 0.5
+  maxCannonAngle: 0.4
+  minCannonAngle: 0.4
 --- !u!1001 &317523377
 Prefab:
   m_ObjectHideFlags: 0
@@ -1826,11 +1830,11 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 209a7fe0ffb83614d91a7658db0b1dcb, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 449951289}
-  m_LocalRotation: {x: 0.00000005960463, y: 0.000000012183072, z: -0.0000000121830706,
-    w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.061355904, y: 0, z: 0.008386446}
   m_LocalScale: {x: 0.1957004, y: 0.13218282, z: 0.1957005}
-  m_Children: []
+  m_Children:
+  - {fileID: 1121327913}
   m_Father: {fileID: 1720432172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3898,12 +3902,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1121327912}
-  m_LocalRotation: {x: 0.0000001216661, y: -0.000000059604645, z: -0.00000006009219,
-    w: -1}
-  m_LocalPosition: {x: 0, y: -0.027440045, z: 0.10700004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.4999999, y: 0.49999994, z: 0.50000006, w: -0.5000001}
+  m_LocalPosition: {x: -1.048096, y: -0, z: 0.0027320073}
+  m_LocalScale: {x: 24.887796, y: 16.810036, z: 16.810062}
   m_Children: []
-  m_Father: {fileID: 1354313924}
+  m_Father: {fileID: 449951290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1001 &1122168724
@@ -4826,7 +4829,6 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.5530009, z: -0.2599969}
   m_LocalScale: {x: 10.000023, y: 10, z: 10.0000105}
   m_Children:
-  - {fileID: 1121327913}
   - {fileID: 1720432172}
   - {fileID: 2041900461}
   m_Father: {fileID: 315711945}
@@ -5572,7 +5574,7 @@ Transform:
   m_Children:
   - {fileID: 449951290}
   m_Father: {fileID: 1354313924}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90.00001}
 --- !u!23 &1720432173
 MeshRenderer:
@@ -6856,7 +6858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999cb237f719f1478c1d1fb62ca1ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 10000
 --- !u!1 &2041900460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6885,7 +6887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1354313924}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!124 &2041900463
 Behaviour:
@@ -7192,7 +7194,7 @@ MonoBehaviour:
   setUpCamera: {fileID: 2103707487}
   splineController: {fileID: 1081489439}
   enemies: {fileID: 1031830197}
-  SpawnEnemies: 1
+  SpawnEnemies: 0
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
