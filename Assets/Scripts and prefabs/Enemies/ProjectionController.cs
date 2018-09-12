@@ -5,18 +5,18 @@ using UnityEngine;
 public class ProjectionController : MonoBehaviour {
 
     public GameObject imageTarget;
-    public GameObject ship;
+    public GameObject shipCentre;
     private CustomTrackableEventHandler imageScript;
-    private MeshRenderer mesh;
+    private MeshRenderer[] mesh;
 
     // Replace this with the playarea gameobject
-    private float SHIP_WIDTH = 10f;
-    private float SHIP_LENGTH = 20f;
+    private float SHIP_WIDTH = 1.5f;
+    private float SHIP_LENGTH = 2f;
 
     void Start()
     {
         imageScript = imageTarget.GetComponent<CustomTrackableEventHandler>();
-        mesh = GetComponent<MeshRenderer>();
+        mesh = this.GetComponentsInChildren<MeshRenderer>();
     }
 	
 	void FixedUpdate () {
@@ -25,10 +25,10 @@ public class ProjectionController : MonoBehaviour {
             return;
         }*/
 
-        if (imageTarget.transform.position.x > ship.transform.position.x + SHIP_WIDTH ||
-            imageTarget.transform.position.x < ship.transform.position.x - SHIP_WIDTH || 
-            imageTarget.transform.position.z > ship.transform.position.z + SHIP_LENGTH ||
-            imageTarget.transform.position.z < ship.transform.position.z - SHIP_LENGTH)
+        if (imageTarget.transform.position.x > shipCentre.transform.position.x + SHIP_WIDTH ||
+            imageTarget.transform.position.x < shipCentre.transform.position.x - SHIP_WIDTH || 
+            imageTarget.transform.position.z > shipCentre.transform.position.z + SHIP_LENGTH ||
+            imageTarget.transform.position.z < shipCentre.transform.position.z - SHIP_LENGTH)
         {
             Disable();
             return;
@@ -36,14 +36,14 @@ public class ProjectionController : MonoBehaviour {
 
         transform.position = new Vector3(
             imageTarget.transform.position.x,
-            ship.transform.position.y,
+            shipCentre.transform.position.y,
             imageTarget.transform.position.z
         );
 
         transform.localEulerAngles = new Vector3(
-            ship.transform.rotation.x,
+            shipCentre.transform.rotation.x,
             imageTarget.transform.rotation.y,
-            ship.transform.rotation.z
+            shipCentre.transform.rotation.z
         );
 
         Enable();
@@ -51,11 +51,16 @@ public class ProjectionController : MonoBehaviour {
 
     void Disable()
     {
-        mesh.enabled = false;
+        foreach (MeshRenderer m in mesh) {
+            m.enabled = false;
+        }
     }
 
     void Enable()
     {
-        mesh.enabled = true;
+        foreach (MeshRenderer m in mesh)
+        {
+            m.enabled = true;
+        }
     }
 }

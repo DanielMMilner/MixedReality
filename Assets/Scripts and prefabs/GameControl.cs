@@ -10,6 +10,7 @@ public class GameControl : MonoBehaviour {
     public GameObject setUpCamera;
     public SplineController splineController;
     public GameObject enemies;
+    public WallController wallController;
 
     private PlayerHealth playerHealth;
     private ShipHealth shipHealth;
@@ -39,6 +40,7 @@ public class GameControl : MonoBehaviour {
             arCamera.SetActive(false);
             setUpCamera.SetActive(false);
             playerParent.SetActive(true);
+            wallController.stop = true;
 
             if(SpawnEnemies)
                 enemies.SetActive(true);

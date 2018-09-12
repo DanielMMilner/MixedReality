@@ -7,6 +7,7 @@ using Vuforia;
 public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     private TrackableBehaviour mTrackableBehaviour;
+    public bool IsCurrentlyTracked = false;
     public GameObject arCamera;
 
     // Use this for initialization
@@ -32,19 +33,21 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NOT_FOUND)
         {
-            //OnTrackingLost();
+            OnTrackingLost();
         }
         else
         {
             // For combo of previousStatus=UNKNOWN + newStatus=UNKNOWN|NOT_FOUND
             // Vuforia is starting, but tracking has not been lost or found yet
             // Call OnTrackingLost() to hide the augmentations
-            //OnTrackingLost();
+            OnTrackingLost();
         }
     }
 
     protected virtual void OnTrackingFound()
     {
+
+        IsCurrentlyTracked = true;
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
@@ -64,6 +67,8 @@ public class CustomTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 
     protected virtual void OnTrackingLost()
     {
+        IsCurrentlyTracked = false;
+
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
