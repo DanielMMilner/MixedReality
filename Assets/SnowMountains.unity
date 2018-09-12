@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &59245120
 Transform:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ Transform:
   - {fileID: 2103707488}
   - {fileID: 1927418680}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -6.6900005, z: 0}
 --- !u!1 &140264512
 GameObject:
@@ -476,8 +476,9 @@ Transform:
   - {fileID: 1837282639}
   - {fileID: 247708837}
   - {fileID: 2019687170}
+  - {fileID: 1910428148}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &153102720
 Prefab:
@@ -3782,7 +3783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &968975641
 Transform:
   m_ObjectHideFlags: 0
@@ -3969,7 +3970,7 @@ Transform:
   - {fileID: 1956105438}
   - {fileID: 1135244027}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1081489436
 GameObject:
@@ -4138,7 +4139,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1081489439
 MonoBehaviour:
@@ -6831,7 +6832,7 @@ GameObject:
   - component: {fileID: 1910428145}
   - component: {fileID: 1910428146}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: GroundPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6896,12 +6897,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1910428144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.7, y: 0, z: 75.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.651661, y: 0, z: 117.56385}
   m_LocalScale: {x: 54.2766, y: 54.2766, z: 54.276596}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 140264513}
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919116046
 GameObject:
@@ -8187,8 +8188,8 @@ MonoBehaviour:
   setUpCamera: {fileID: 2103707487}
   splineController: {fileID: 1081489439}
   enemies: {fileID: 1031830197}
-  wallController: {fileID: 0}
-  SpawnEnemies: 0
+  wallController: {fileID: 968975642}
+  SpawnEnemies: 1
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
@@ -8200,7 +8201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2103707487
 GameObject:
