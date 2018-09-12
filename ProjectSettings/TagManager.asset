@@ -5,7 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Tip
+  - PlayerShip
+  - ARCamera
+  - DroneBullet
+  - TurretBullet
+  - PlayerBullet
+  - Bullet
+  - ShipTarget
+  - MountableTurret
   layers:
   - Default
   - TransparentFX
@@ -38,7 +45,7 @@ TagManager:
   - 
   - 
   - 
-  - Spatial Mapping
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
