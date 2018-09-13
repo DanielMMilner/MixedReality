@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.XR.WSA.Input;
 
 public class MountableTurretGunController : MonoBehaviour {
     [Header("Bullet Settings")]
@@ -21,14 +22,27 @@ public class MountableTurretGunController : MonoBehaviour {
         {
             _bulletCooldown -= Time.deltaTime;
         }
+        var interactionSourceStates = InteractionManager.GetCurrentReading();
+        foreach (var interactionSourceState in interactionSourceStates)
+        {
+            if (interactionSourceState.selectPressed && _bulletCooldown <= 0f)
+            {
+                ShootBullet();
+            }
+        }
 
         if (Input.GetKey(KeyCode.Mouse0) && _bulletCooldown <= 0f)
         {
-            var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-
-            Destroy(bullet, bulletLifespan);
-            _bulletCooldown = bulletCooldown;
+            ShootBullet();
         }
+    }
+
+    void ShootBullet()
+    {
+        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
+        Destroy(bullet, bulletLifespan);
+        _bulletCooldown = bulletCooldown;
     }
 }

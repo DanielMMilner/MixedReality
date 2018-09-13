@@ -6,7 +6,6 @@ public class ProjectionController : MonoBehaviour {
 
     public GameObject imageTarget;
     public GameObject shipCentre;
-    private CustomTrackableEventHandler imageScript;
     private MeshRenderer[] mesh;
 
     // Replace this with the playarea gameobject
@@ -15,7 +14,6 @@ public class ProjectionController : MonoBehaviour {
 
     void Start()
     {
-        imageScript = imageTarget.GetComponent<CustomTrackableEventHandler>();
         mesh = this.GetComponentsInChildren<MeshRenderer>();
     }
 	
