@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.WSA.Input;
 
 public class GameControl : MonoBehaviour {
     public GameObject playerParent;
@@ -33,20 +34,38 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!gameStarted && Input.GetKeyDown(KeyCode.Space))
+        if (gameStarted)
+            return;
+
+        var interactionSourceStates = InteractionManager.GetCurrentReading();
+        foreach (var interactionSourceState in interactionSourceStates)
         {
-            gameStarted = true;
-            Debug.Log("Game Started");
-            arCamera.SetActive(false);
-            setUpCamera.SetActive(false);
-            playerParent.SetActive(true);
-            wallController.stop = true;
-
-            if(SpawnEnemies)
-                enemies.SetActive(true);
-
-            splineController.StartGame();
+            if (interactionSourceState.selectPressed)
+            {
+                StartGame();
+            }
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+        }
+    }
+
+    private void StartGame()
+    {
+        gameStarted = true;
+        Debug.Log("Game Started");
+        arCamera.SetActive(false);
+        setUpCamera.SetActive(false);
+        playerParent.SetActive(true);
+        wallController.stop = true;
+
+        if (SpawnEnemies)
+            enemies.SetActive(true);
+
+        splineController.StartGame();
     }
 
     public void DamageShip(int amount)

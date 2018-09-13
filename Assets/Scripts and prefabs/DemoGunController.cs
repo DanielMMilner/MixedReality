@@ -32,17 +32,30 @@ public class DemoGunController : MonoBehaviour {
         if (_bulletCooldown > 0f) {
             _bulletCooldown -= Time.deltaTime;
         }
+        var interactionSourceStates = InteractionManager.GetCurrentReading();
+        foreach (var interactionSourceState in interactionSourceStates)
+        {
+            if (interactionSourceState.selectPressed && _bulletCooldown <= 0f)
+            {
+                ShootBullet();
+            }
+        }
 
         if (Input.GetKey(KeyCode.Mouse0) && _bulletCooldown <= 0f)
         {
-            var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-
-            Destroy(bullet, bulletLifespan);
-            _bulletCooldown = bulletCooldown;
-
-            StartRecoil(recoilTime, maxRecoil, recoilSpeed);
+            ShootBullet();
         }
+    }
+
+    void ShootBullet()
+    {
+        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
+        Destroy(bullet, bulletLifespan);
+        _bulletCooldown = bulletCooldown;
+
+        StartRecoil(recoilTime, maxRecoil, recoilSpeed);
     }
 
 
