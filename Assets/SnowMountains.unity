@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToMove: {fileID: 2033928913}
-  speed: 10
+  speed: 2
   distance: 0
   lookPointDist: 15
 --- !u!114 &1081489440
@@ -7108,7 +7108,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1009928122327970, guid: 003e064868fce924dac392dbfb4876bd,
     type: 2}
   bulletSpawn: {fileID: 830015742}
-  bulletSpeed: 30
+  bulletSpeed: 45
   bulletLifespan: 7
   bulletCooldown: 0.5
 --- !u!95 &1692575157
