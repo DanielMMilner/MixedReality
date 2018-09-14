@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - ShipTarget
   - MountableTurret
+  - InvisibleWall
   layers:
   - Default
   - TransparentFX

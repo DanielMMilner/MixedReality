@@ -11,7 +11,7 @@ public class DemoBulletController : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if (!other.tag.Equals("Bullet"))
+        if (!other.tag.Equals("Bullet") && !other.tag.Equals("InvisibleWall"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);

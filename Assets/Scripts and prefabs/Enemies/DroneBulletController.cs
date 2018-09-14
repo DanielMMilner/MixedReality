@@ -11,7 +11,7 @@ public class DroneBulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Create an explosion and destroy yourself.
-        if (!other.tag.Equals("Enemy") && !other.tag.Equals("Bullet"))
+        if (!other.tag.Equals("Enemy") && !other.tag.Equals("Bullet") && !other.tag.Equals("InvisibleWall"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
 
