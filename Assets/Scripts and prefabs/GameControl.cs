@@ -12,12 +12,11 @@ public class GameControl : MonoBehaviour {
     public SplineController splineController;
     public GameObject enemies;
     public WallController wallController;
+    public bool SpawnEnemies;
+    public bool StartSpline;
 
     private PlayerHealth playerHealth;
     private ShipHealth shipHealth;
-
-    public bool SpawnEnemies;
-
     private bool gameStarted = false;
 
 
@@ -65,7 +64,8 @@ public class GameControl : MonoBehaviour {
         if (SpawnEnemies)
             enemies.SetActive(true);
 
-        splineController.StartGame();
+        if(StartSpline)
+            splineController.StartGame();
     }
 
     public void DamageShip(int amount)
