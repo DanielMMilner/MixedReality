@@ -41,7 +41,6 @@ public class MountableTurretController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TESTST");
         if (other.tag.Equals("MainCamera"))
         {
             Debug.Log("Starting mountable turret timer");
