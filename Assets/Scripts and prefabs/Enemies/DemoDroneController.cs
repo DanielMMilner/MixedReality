@@ -52,6 +52,9 @@ public class DemoDroneController : MonoBehaviour {
         if (!_aggro && distanceToPlayer <= aggroRange)
         {
             _aggro = true;
+        } else if (distanceToPlayer > aggroRange)
+        {
+            _aggro = false;
         }
 
         // If not aggrod, do nothing
