@@ -21,33 +21,57 @@ public class DemoDroneController : MonoBehaviour {
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
 
+    private bool Alive = true;
+    public float corpseLifespan = 45.0f;
+
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
     void FixedUpdate () {
+        if (Alive)
+        {
+            Fly();
+        }else if(corpseLifespan > 0)
+        {
+            corpseLifespan -= Time.deltaTime;
+            if(corpseLifespan < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    void Fly()
+    {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // If you aren't already aggro'd but are now in range.
-        if (!_aggro && distanceToPlayer <= aggroRange) {
+        if (!_aggro && distanceToPlayer <= aggroRange)
+        {
             _aggro = true;
         }
 
         // If not aggrod, do nothing
-        if (!_aggro) {
+        if (!_aggro)
+        {
             return;
         }
 
         transform.LookAt(player); // TODO: Replace with a smooth rotation
 
         // Move to within range of the player, and start firing
-        if (distanceToPlayer > stoppingRange) {
+        if (distanceToPlayer > stoppingRange)
+        {
             transform.position = Vector3.MoveTowards(transform.position, player.position, flightSpeed);
-        }else{
+        }
+        else
+        {
             transform.position = Vector3.MoveTowards(transform.position, player.position, -flightSpeed);
         }
-        
+
         Fire();
     }
 
@@ -65,5 +89,13 @@ public class DemoDroneController : MonoBehaviour {
         // Destroy the bullet if it timeouts, but it should hit something before then (ground/player)
         Destroy(bullet, bulletLifespan);
         _bulletCooldown = bulletCooldown;
+    }
+
+    public void Died(Vector3 explosionPosition)
+    {
+        Alive = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.AddExplosionForce(100f, explosionPosition, 20f);
+        rb.useGravity = true;
     }
 }
