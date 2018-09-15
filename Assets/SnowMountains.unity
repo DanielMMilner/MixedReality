@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 59245120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurretParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 192056964}
   - component: {fileID: 192056963}
   - component: {fileID: 192056962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ImageTarget1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 207149695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 227907410}
   - component: {fileID: 227907409}
   - component: {fileID: 227907408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1411,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 260377789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayArea
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -1740,7 +1740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315711945}
   - component: {fileID: 315711946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurretFPSParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 340343251}
   - component: {fileID: 340343253}
   - component: {fileID: 340343252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,7 +2127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410326914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CameraScaleParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2220,7 +2220,7 @@ GameObject:
   - component: {fileID: 448826401}
   - component: {fileID: 448826404}
   - component: {fileID: 448826405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2330,7 +2330,7 @@ GameObject:
   - component: {fileID: 449951290}
   - component: {fileID: 449951292}
   - component: {fileID: 449951291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2475,7 +2475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516171726}
   - component: {fileID: 516171727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBoundaryBottom
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -2566,7 +2566,7 @@ GameObject:
   - component: {fileID: 524955528}
   - component: {fileID: 524955527}
   - component: {fileID: 524955526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2696,7 +2696,7 @@ GameObject:
   - component: {fileID: 555865063}
   - component: {fileID: 555865062}
   - component: {fileID: 555865061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,7 +2850,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 612777120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MultiTargetParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3061,7 +3061,7 @@ GameObject:
   - component: {fileID: 667897796}
   - component: {fileID: 667897798}
   - component: {fileID: 667897797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunCylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3289,7 +3289,7 @@ GameObject:
   - component: {fileID: 727539338}
   - component: {fileID: 727539337}
   - component: {fileID: 727539336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3642,7 +3642,7 @@ GameObject:
   - component: {fileID: 767923205}
   - component: {fileID: 767923204}
   - component: {fileID: 767923203}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,7 +3851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787931249}
   - component: {fileID: 787931250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBoundaryLeft
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -3963,7 +3963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820619388}
   - component: {fileID: 820619389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBoundaryRight
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -4006,7 +4006,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 830015742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4045,7 +4045,7 @@ GameObject:
   - component: {fileID: 858406375}
   - component: {fileID: 858406374}
   - component: {fileID: 858406373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ImageTarget2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4260,7 +4260,7 @@ GameObject:
   - component: {fileID: 889702290}
   - component: {fileID: 889702289}
   - component: {fileID: 889702295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ImageTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4658,7 +4658,7 @@ GameObject:
   - component: {fileID: 960007407}
   - component: {fileID: 960007409}
   - component: {fileID: 960007408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunClip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4731,7 +4731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 968975641}
   - component: {fileID: 968975642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5712,7 +5712,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1121327913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5950,7 +5950,7 @@ GameObject:
   - component: {fileID: 1142307929}
   - component: {fileID: 1142307932}
   - component: {fileID: 1142307933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SimpleSciFiTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6042,15 +6042,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4998162881281064, guid: 17cf5d3ffb484a94aa8d72efa788c807, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -45.34593
+      value: -46.37
       objectReference: {fileID: 0}
     - target: {fileID: 4998162881281064, guid: 17cf5d3ffb484a94aa8d72efa788c807, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.8020573
+      value: 7.03
       objectReference: {fileID: 0}
     - target: {fileID: 4998162881281064, guid: 17cf5d3ffb484a94aa8d72efa788c807, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 73.74086
+      value: 74.78
       objectReference: {fileID: 0}
     - target: {fileID: 4998162881281064, guid: 17cf5d3ffb484a94aa8d72efa788c807, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6167,7 +6167,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1225519649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShipTarget
   m_TagString: ShipTarget
   m_Icon: {fileID: 0}
@@ -6181,7 +6181,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1225519648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.85000545, y: -20.299997, z: 32.41677}
+  m_LocalPosition: {x: 0.85, y: -12, z: 42.9}
   m_LocalScale: {x: 0.5000002, y: 1, z: 0.8333336}
   m_Children: []
   m_Father: {fileID: 115041646}
@@ -6215,7 +6215,7 @@ GameObject:
   - component: {fileID: 1233370045}
   - component: {fileID: 1233370047}
   - component: {fileID: 1233370046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MultiTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6843,7 +6843,7 @@ GameObject:
   - component: {fileID: 1337032068}
   - component: {fileID: 1337032067}
   - component: {fileID: 1337032070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6940,7 +6940,7 @@ GameObject:
   - component: {fileID: 1345169517}
   - component: {fileID: 1345169516}
   - component: {fileID: 1345169515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7450,7 +7450,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1524026652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChildTargets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7766,7 +7766,7 @@ GameObject:
   - component: {fileID: 1586010640}
   - component: {fileID: 1586010642}
   - component: {fileID: 1586010641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7870,7 +7870,7 @@ GameObject:
   - component: {fileID: 1601736844}
   - component: {fileID: 1601736843}
   - component: {fileID: 1601736842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7953,7 +7953,7 @@ GameObject:
   - component: {fileID: 1617137522}
   - component: {fileID: 1617137524}
   - component: {fileID: 1617137523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8072,7 +8072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653510242}
   - component: {fileID: 1653510243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBoundaryFront
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -8275,7 +8275,7 @@ GameObject:
   - component: {fileID: 1692575155}
   - component: {fileID: 1692575157}
   - component: {fileID: 1692575156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SciFiHandGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8351,7 +8351,7 @@ GameObject:
   - component: {fileID: 1720432172}
   - component: {fileID: 1720432174}
   - component: {fileID: 1720432173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8457,7 +8457,7 @@ GameObject:
   - component: {fileID: 1763639035}
   - component: {fileID: 1763639037}
   - component: {fileID: 1763639036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunTriggerCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8782,7 +8782,7 @@ GameObject:
   - component: {fileID: 1861382893}
   - component: {fileID: 1861382892}
   - component: {fileID: 1861382891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8900,7 +8900,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 592222779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerParent
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9148,7 +9148,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1919116047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ARCameraParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9195,7 +9195,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1927418680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShipCentre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10083,7 +10083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033191055}
   - component: {fileID: 2033191056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBoundaryBack
   m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
@@ -10132,7 +10132,7 @@ GameObject:
   - component: {fileID: 2033928914}
   - component: {fileID: 2033928918}
   - component: {fileID: 2033928919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ship
   m_TagString: PlayerShip
   m_Icon: {fileID: 0}
@@ -10245,7 +10245,7 @@ GameObject:
   - component: {fileID: 2034287297}
   - component: {fileID: 2034287296}
   - component: {fileID: 2034287295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10328,7 +10328,7 @@ GameObject:
   - component: {fileID: 2041900461}
   - component: {fileID: 2041900464}
   - component: {fileID: 2041900463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10492,7 +10492,7 @@ GameObject:
   - component: {fileID: 2080990353}
   - component: {fileID: 2080990352}
   - component: {fileID: 2080990351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: box2_cube.Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10811,7 +10811,7 @@ GameObject:
   - component: {fileID: 2103707491}
   - component: {fileID: 2103707490}
   - component: {fileID: 2103707489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SetUpCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10910,7 +10910,7 @@ GameObject:
   - component: {fileID: 2123993873}
   - component: {fileID: 2123993872}
   - component: {fileID: 2123993871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10995,7 +10995,7 @@ GameObject:
   - component: {fileID: 2124420040}
   - component: {fileID: 2124420039}
   - component: {fileID: 2124420037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FPSController
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -11285,7 +11285,7 @@ GameObject:
   - component: {fileID: 2133311473}
   - component: {fileID: 2133311472}
   - component: {fileID: 2133311471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ARCamera
   m_TagString: ARCamera
   m_Icon: {fileID: 0}

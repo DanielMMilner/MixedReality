@@ -421,8 +421,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1577179236631498, guid: 976cb7cb42195c74f808ddbddaac994e,
     type: 2}
   bulletSpawn: {fileID: 4944525553529756}
-  bulletSpeed: 10
-  bulletLifespan: 5
+  bulletSpeed: 13
+  bulletLifespan: 20
   range: 100
   cooldownTime: 5
 --- !u!137 &137045657560717270

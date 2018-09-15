@@ -27,25 +27,38 @@ public class TurretController : MonoBehaviour {
 	void Update () {
         // Raycast to object
         // Determine distance between objects
+
         float distance = Vector3.Distance(transform.position, ship.transform.position);
         if(distance < range)
         {
-            Debug.DrawLine(transform.position, ship.transform.position, Color.red);
             transform.LookAt(ship.transform);
 
-            if (remainingCooldownTime <= 0f)
+            RaycastHit hit;
+            Vector3 rayDirection = ship.transform.position - bulletSpawn.transform.position;
+            int layerMask = 1 << 9;
+            layerMask = ~layerMask;
+
+            if (Physics.Raycast(bulletSpawn.transform.position, rayDirection, out hit, range, layerMask))
             {
-                var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-                
-                Destroy(bullet, bulletLifespan);
-                remainingCooldownTime = cooldownTime;
+                Debug.DrawRay(bulletSpawn.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
+                {
+                    Shoot();
+                }
             }
-        }
-        else
-        {
-            Debug.DrawLine(transform.position, ship.transform.position, Color.green);
         }
         remainingCooldownTime -= Time.fixedDeltaTime;
 	}
+
+    void Shoot()
+    {
+        if (remainingCooldownTime <= 0f)
+        {
+            var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
+            Destroy(bullet, bulletLifespan);
+            remainingCooldownTime = cooldownTime;
+        }
+    }
 }
