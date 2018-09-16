@@ -15,6 +15,7 @@ TagManager:
   - MountableTurret
   - InvisibleWall
   - EnemyDrone
+  - ChangeSplineSpeed
   layers:
   - Default
   - TransparentFX

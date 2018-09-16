@@ -12,7 +12,7 @@ public class TurretBulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Create an explosion and destroy yourself.
-        if (!other.tag.Equals("Enemy") && !other.tag.Equals("Bullet") && !other.tag.Equals("InvisibleWall"))
+        if (!other.tag.Equals("Enemy") && !other.tag.Equals("Bullet") && !other.tag.Equals("InvisibleWall") && !other.tag.Equals("ChangeSplineSpeed"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
 
