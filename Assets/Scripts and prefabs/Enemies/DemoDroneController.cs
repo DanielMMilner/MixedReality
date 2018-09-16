@@ -98,7 +98,7 @@ public class DemoDroneController : MonoBehaviour {
     {
         Alive = false;
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddExplosionForce(100f, explosionPosition, 10f);
+        rb.AddExplosionForce(50f, explosionPosition, 10f);
         rb.useGravity = true;
     }
 }

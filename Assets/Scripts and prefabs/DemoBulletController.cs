@@ -19,7 +19,8 @@ public class DemoBulletController : MonoBehaviour {
             {
                 DemoDroneController ddc = other.GetComponent<DemoDroneController>();
                 ddc.Died(transform.position);
-            }else if (other.tag.Equals("Enemy"))
+            }
+            else if (other.tag.Equals("Enemy"))
             {
                 Destroy(other.gameObject);
             }
