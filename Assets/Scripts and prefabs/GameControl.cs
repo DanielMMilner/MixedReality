@@ -63,6 +63,14 @@ public class GameControl : MonoBehaviour {
         wallController.stop = true;
         spaceShipsController.StartGame();
 
+
+        ProjectionController[] projectionControllers = ship.GetComponentsInChildren<ProjectionController>();
+
+        foreach (ProjectionController p in projectionControllers)
+        {
+            p.enabled = false;
+        }
+
         if (SpawnEnemies)
             enemies.SetActive(true);
 

@@ -20,18 +20,33 @@ public class DemoDroneController : MonoBehaviour {
     public float bulletLifespan = 5.0f;     // Maximum lifespan, if nothing hit by then.
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
+    private Rigidbody rb;
 
-    private bool Alive = true;
+    public float pooledBullets = 10;
+    private Queue<GameObject> bullets;
+    private bool isAlive = true;
     public float corpseLifespan = 45.0f;
-
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        rb = GetComponent<Rigidbody>();
+        rb.Sleep();
+
+        bullets = new Queue<GameObject>();
+        for (int i = 0; i < pooledBullets; i++)
+        {
+            GameObject bullet = Instantiate(bulletPrefab) as GameObject;
+            bullet.transform.parent = gameObject.transform;
+            bullet.GetComponent<DroneBulletController>().Reset(bulletLifespan);
+            bullet.GetComponent<DroneBulletController>().SetParentDrone(this);
+            bullet.SetActive(false);
+            bullets.Enqueue(bullet);
+        }
     }
 
     void FixedUpdate () {
-        if (Alive)
+        if (isAlive)
         {
             Fly();
         }else if(corpseLifespan > 0)
@@ -86,19 +101,41 @@ public class DemoDroneController : MonoBehaviour {
             return;
         }
 
-        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+        GameObject bullet = bullets.Dequeue();
 
-        // Destroy the bullet if it timeouts, but it should hit something before then (ground/player)
-        Destroy(bullet, bulletLifespan);
+        if (!bullet.activeSelf)
+        {
+            bullet.transform.position = bulletSpawn.transform.position;
+            bullet.transform.rotation = transform.rotation;
+            bullet.GetComponent<DroneBulletController>().Reset(bulletLifespan);
+            bullet.SetActive(true);
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+        }
+
         _bulletCooldown = bulletCooldown;
+    }
+
+    public void QueueBullet(GameObject bullet)
+    {
+        if (isAlive)
+        {
+            bullets.Enqueue(bullet);
+        }
+        else
+        {
+            Destroy(bullet);
+        }
     }
 
     public void Died(Vector3 explosionPosition)
     {
-        Alive = false;
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddExplosionForce(50f, explosionPosition, 10f);
+        isAlive = false;
         rb.useGravity = true;
+        rb.AddExplosionForce(50f, explosionPosition, 10f);
+
+        foreach (GameObject x in bullets)
+        {
+            Destroy(x);
+        }
     }
 }

@@ -161,4 +161,5 @@ MonoBehaviour:
   bulletSpeed: 15
   bulletLifespan: 15
   bulletCooldown: 1
+  pooledBullets: 5
   corpseLifespan: 15

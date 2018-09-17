@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* */
-
 public class DemoBulletController : MonoBehaviour {
 
     public ParticleSystem explosion;
@@ -21,6 +19,7 @@ public class DemoBulletController : MonoBehaviour {
             }
             else if (other.tag.Equals("Enemy"))
             {
+                other.gameObject.GetComponent<TurretController>().Destroyed();
                 Destroy(other.gameObject);
             }
         }

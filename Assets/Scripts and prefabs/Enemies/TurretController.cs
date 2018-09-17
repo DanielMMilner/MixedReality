@@ -10,17 +10,31 @@ public class TurretController : MonoBehaviour {
     public Transform bulletSpawn;
     public float bulletSpeed = 5.0f;
     public float bulletLifespan = 5.0f;
-
+    public float pooledBullets = 5;
     public float range = 100;
 
     // Time in seconds
     public float cooldownTime = 1f;
+    private Queue<GameObject> bullets;
     private float remainingCooldownTime = 0f;
+
+    private bool isAlive = true;
 
     // Use this for initialization
     void Start () {
         ship = GameObject.FindWithTag("ShipTarget");
         remainingCooldownTime = cooldownTime;
+
+        bullets = new Queue<GameObject>();
+        for(int i = 0; i < pooledBullets; i++)
+        {
+            GameObject bullet = Instantiate (bulletPrefab) as GameObject;
+            bullet.transform.parent = gameObject.transform;
+            bullet.GetComponent<TurretBulletController>().Reset(bulletLifespan);
+            bullet.GetComponent<TurretBulletController>().SetParentTurret(this);
+            bullet.SetActive(false);
+            bullets.Enqueue(bullet);
+        }
     }
 	
 	// Update is called once per frame
@@ -36,7 +50,8 @@ public class TurretController : MonoBehaviour {
             RaycastHit hit;
             Vector3 rayDirection = ship.transform.position - bulletSpawn.transform.position;
             int layerMask = 1 << 9;
-            layerMask = ~layerMask;
+            int layerMask2 = 1 << 2;
+            layerMask = ~(layerMask | layerMask2);
 
             if (Physics.Raycast(bulletSpawn.transform.position, rayDirection, out hit, range, layerMask))
             {
@@ -50,15 +65,42 @@ public class TurretController : MonoBehaviour {
         remainingCooldownTime -= Time.fixedDeltaTime;
 	}
 
+    public void QueueBullet(GameObject bullet)
+    {
+        if(isAlive)
+        {
+            bullets.Enqueue(bullet);
+        }
+        else
+        {
+            Destroy(bullet);
+        }
+    }
+
     void Shoot()
     {
         if (remainingCooldownTime <= 0f)
         {
-            var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, transform.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+            GameObject bullet = bullets.Dequeue();
 
-            Destroy(bullet, bulletLifespan);
+            if (!bullet.activeSelf)
+            {
+                bullet.transform.position = bulletSpawn.transform.position;
+                bullet.transform.rotation = transform.rotation;
+                bullet.GetComponent<TurretBulletController>().Reset(bulletLifespan);
+                bullet.SetActive(true);
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+            }
             remainingCooldownTime = cooldownTime;
+        }
+    }
+
+    public void Destroyed()
+    {
+        isAlive = false;
+        foreach (GameObject x in bullets)
+        {
+            Destroy(x);
         }
     }
 }
