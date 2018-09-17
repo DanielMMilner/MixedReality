@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour {
     public SplineController splineController;
     public GameObject enemies;
     public WallController wallController;
+    public SpaceShipsController spaceShipsController;
     public bool SpawnEnemies;
     public bool StartSpline;
 
@@ -60,11 +61,12 @@ public class GameControl : MonoBehaviour {
         setUpCamera.SetActive(false);
         playerParent.SetActive(true);
         wallController.stop = true;
+        spaceShipsController.StartGame();
 
         if (SpawnEnemies)
             enemies.SetActive(true);
 
-        if(StartSpline)
+        if (StartSpline)
             splineController.StartGame();
     }
 
