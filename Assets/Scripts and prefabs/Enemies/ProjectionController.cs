@@ -12,6 +12,8 @@ public class ProjectionController : MonoBehaviour {
     private float SHIP_WIDTH = 1.5f;
     private float SHIP_LENGTH = 2f;
 
+    public float rotation_offset = 0;
+
     void Start()
     {
         mesh = this.GetComponentsInChildren<MeshRenderer>();
@@ -38,9 +40,23 @@ public class ProjectionController : MonoBehaviour {
             imageTarget.transform.position.z
         );
 
+        Vector3 temp = imageTarget.transform.forward;
+        temp.y = 0;
+
+        float y_val;
+        if (temp.x > 0)
+        {
+            y_val = Vector3.Angle(Vector3.forward, temp);
+        } else
+        {
+            y_val = Vector3.Angle(Vector3.forward, -1 * temp) + 180;
+        }
+
+        y_val += rotation_offset;
+
         transform.localEulerAngles = new Vector3(
             shipCentre.transform.rotation.x,
-            imageTarget.transform.rotation.y,
+            y_val,
             shipCentre.transform.rotation.z
         );
 

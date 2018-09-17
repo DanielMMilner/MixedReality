@@ -2928,7 +2928,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 209a7fe0ffb83614d91a7658db0b1dcb, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142307928}
-  m_LocalRotation: {x: -0.012503702, y: -0.69694334, z: -0.012155352, w: -0.7169142}
+  m_LocalRotation: {x: 0.00048865733, y: -0.0000085210095, z: 0.017434945, w: 0.9998479}
   m_LocalPosition: {x: 0, y: 0.22000027, z: -0.1599844}
   m_LocalScale: {x: 33.333565, y: 33.33334, z: 33.333584}
   m_Children:
@@ -2936,7 +2936,7 @@ Transform:
   - {fileID: 315711945}
   m_Father: {fileID: 59245120}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.056, y: 448.38202, z: 1.9980001}
+  m_LocalEulerAnglesHint: {x: 0.056, y: 0, z: 1.9980001}
 --- !u!1001 &365087729
 Prefab:
   m_ObjectHideFlags: 0
@@ -4822,6 +4822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 858406371}
   shipCentre: {fileID: 1927418679}
+  rotation_offset: 0
 --- !u!23 &727539337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6343,7 +6344,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr_code_1
+  mTrackableName: box2_single
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/RMIT_MR_Course.xml
@@ -6880,7 +6881,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: qr_code_1Material
+  m_Name: box2_singleMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -6893,7 +6894,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0e722771b03c42d2987e6809555107d6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 81f4646840564122aac1a7fe16b959d0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -8326,6 +8327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 889702288}
   shipCentre: {fileID: 1927418679}
+  rotation_offset: 90
 --- !u!1001 &1157282266
 Prefab:
   m_ObjectHideFlags: 0
@@ -9502,6 +9504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 192056960}
   shipCentre: {fileID: 1927418679}
+  rotation_offset: 0
 --- !u!1 &1345169513
 GameObject:
   m_ObjectHideFlags: 0
