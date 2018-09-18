@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemoBulletController : MonoBehaviour {
+public class PlayerBulletController : MonoBehaviour {
 
     public ParticleSystem explosion;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* A simple movement script for the player while we don't have access to the VR headset */
 
-public class DemoPlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     [Header("Player Movement Settings")]
     public float turnSpeed = 200;

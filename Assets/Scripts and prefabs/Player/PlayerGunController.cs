@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.WSA.Input;
 
-public class DemoGunController : MonoBehaviour {
+public class PlayerGunController : MonoBehaviour {
 
     [Header("Gun Settings")]
     public float recoilTime = 0.3f;         // How long to recoil for

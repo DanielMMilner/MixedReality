@@ -7093,7 +7093,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: box1_singleMaterial
+  m_Name: box2_singleMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -7106,7 +7106,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bdfe1698105a4c959c0df712d4191163, type: 3}
+        m_Texture: {fileID: 2800000, guid: 81f4646840564122aac1a7fe16b959d0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -8591,7 +8591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 889702288}
   shipCentre: {fileID: 1927418679}
-  rotation_offset: 90
+  rotation_offset: -90
 --- !u!1001 &1157282266
 Prefab:
   m_ObjectHideFlags: 0
