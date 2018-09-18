@@ -14,13 +14,11 @@ public class DemoBulletController : MonoBehaviour {
             Destroy(this.gameObject);
             if (other.tag.Equals("EnemyDrone"))
             {
-                DemoDroneController ddc = other.GetComponent<DemoDroneController>();
-                ddc.Died(transform.position);
+                other.GetComponent<DemoDroneController>().Died(transform.position);
             }
             else if (other.tag.Equals("Enemy"))
             {
                 other.gameObject.GetComponent<TurretController>().Destroyed();
-                Destroy(other.gameObject);
             }
         }
     }

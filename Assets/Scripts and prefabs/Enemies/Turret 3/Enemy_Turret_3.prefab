@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 4626197054014726}
   - component: {fileID: 33994501369370970}
   - component: {fileID: 23357915263832768}
-  - component: {fileID: 95102449530819088}
   m_Layer: 0
   m_Name: GunPlat_1
   m_TagString: Untagged
@@ -373,23 +372,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 43.605812, y: 47.931435, z: 185.9024}
   m_Center: {x: -35.808178, y: 163.00192, z: 206.57272}
---- !u!95 &95102449530819088
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1392134098777998}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 57deba1b0134b8844a19b024ee58829e, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95813323416045648
 Animator:
   serializedVersion: 3

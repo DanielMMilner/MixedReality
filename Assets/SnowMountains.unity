@@ -7777,7 +7777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToMove: {fileID: 2033928913}
-  speed: 800
+  speed: 8
   distance: 0
   lookPointDist: 15
 --- !u!114 &1081489440
@@ -8527,7 +8527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c1eefe275435543bb54ee562e44e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerStart: 2
+  timerStart: 1
   turretCamera: {fileID: 2041900460}
   player: {fileID: 1878859350}
 --- !u!65 &1142307930

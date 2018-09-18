@@ -18,8 +18,6 @@ public class TurretController : MonoBehaviour {
     private Queue<GameObject> bullets;
     private float remainingCooldownTime = 0f;
 
-    private bool isAlive = true;
-
     // Use this for initialization
     void Start () {
         ship = GameObject.FindWithTag("ShipTarget");
@@ -30,8 +28,7 @@ public class TurretController : MonoBehaviour {
         {
             GameObject bullet = Instantiate (bulletPrefab) as GameObject;
             bullet.transform.parent = gameObject.transform;
-            bullet.GetComponent<TurretBulletController>().Reset(bulletLifespan);
-            bullet.GetComponent<TurretBulletController>().SetParentTurret(this);
+            bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
             bullet.SetActive(false);
             bullets.Enqueue(bullet);
         }
@@ -65,18 +62,6 @@ public class TurretController : MonoBehaviour {
         remainingCooldownTime -= Time.fixedDeltaTime;
 	}
 
-    public void QueueBullet(GameObject bullet)
-    {
-        if(isAlive)
-        {
-            bullets.Enqueue(bullet);
-        }
-        else
-        {
-            Destroy(bullet);
-        }
-    }
-
     void Shoot()
     {
         if (remainingCooldownTime <= 0f)
@@ -87,20 +72,26 @@ public class TurretController : MonoBehaviour {
             {
                 bullet.transform.position = bulletSpawn.transform.position;
                 bullet.transform.rotation = transform.rotation;
-                bullet.GetComponent<TurretBulletController>().Reset(bulletLifespan);
+                bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
                 bullet.SetActive(true);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
             }
+
+            bullets.Enqueue(bullet);
             remainingCooldownTime = cooldownTime;
         }
     }
 
     public void Destroyed()
     {
-        isAlive = false;
-        foreach (GameObject x in bullets)
+        foreach (GameObject bullet in bullets)
         {
-            Destroy(x);
+            if (bullet.activeSelf)
+            {
+                bullet.transform.parent = null;
+                Destroy(bullet, bulletLifespan);
+            }
         }
+        Destroy(gameObject);
     }
 }

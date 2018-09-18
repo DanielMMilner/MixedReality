@@ -37,9 +37,8 @@ public class DemoDroneController : MonoBehaviour {
         for (int i = 0; i < pooledBullets; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab) as GameObject;
-            bullet.transform.parent = gameObject.transform;
-            bullet.GetComponent<DroneBulletController>().Reset(bulletLifespan);
-            bullet.GetComponent<DroneBulletController>().SetParentDrone(this);
+            //bullet.transform.parent = gameObject.transform;
+            bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
             bullet.SetActive(false);
             bullets.Enqueue(bullet);
         }
@@ -107,24 +106,13 @@ public class DemoDroneController : MonoBehaviour {
         {
             bullet.transform.position = bulletSpawn.transform.position;
             bullet.transform.rotation = transform.rotation;
-            bullet.GetComponent<DroneBulletController>().Reset(bulletLifespan);
+            bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
             bullet.SetActive(true);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
         }
 
+        bullets.Enqueue(bullet);
         _bulletCooldown = bulletCooldown;
-    }
-
-    public void QueueBullet(GameObject bullet)
-    {
-        if (isAlive)
-        {
-            bullets.Enqueue(bullet);
-        }
-        else
-        {
-            Destroy(bullet);
-        }
     }
 
     public void Died(Vector3 explosionPosition)
