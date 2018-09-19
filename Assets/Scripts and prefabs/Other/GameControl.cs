@@ -5,6 +5,7 @@ using UnityEngine.XR.WSA.Input;
 
 public class GameControl : MonoBehaviour {
     public GameObject playerParent;
+    public GameObject mixedRealityCamera;
     public GameObject player;
     public GameObject ship;
     public GameObject arCamera;
@@ -23,7 +24,8 @@ public class GameControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        playerParent.SetActive(false);
+        //playerParent.SetActive(false);
+        //mixedRealityCamera.SetActive(false);
         enemies.SetActive(false);
         arCamera.SetActive(true);
         setUpCamera.SetActive(true);
@@ -59,7 +61,8 @@ public class GameControl : MonoBehaviour {
         Debug.Log("Game Started");
         arCamera.SetActive(false);
         setUpCamera.SetActive(false);
-        playerParent.SetActive(true);
+        //playerParent.SetActive(true);
+        mixedRealityCamera.SetActive(true);
         wallController.stop = true;
         spaceShipsController.StartGame();
 
