@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.WSA.Input;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameControl : MonoBehaviour {
     public GameObject playerParent;
-    public GameObject mixedRealityCamera;
-    public GameObject player;
+
+    public FirstPersonController fpsController;
+    public GameObject fpsCharacter;
+
+    public GameObject mixedRealityCameraParent;
+
+    public PlayerHealth playerHealth;
     public GameObject ship;
     public GameObject arCamera;
     public GameObject setUpCamera;
@@ -16,22 +22,28 @@ public class GameControl : MonoBehaviour {
     public SpaceShipsController spaceShipsController;
     public bool SpawnEnemies;
     public bool StartSpline;
+    public bool useVuforia;
 
-    private PlayerHealth playerHealth;
     private ShipHealth shipHealth;
     private bool gameStarted = false;
 
 
     // Use this for initialization
     void Start () {
-        //playerParent.SetActive(false);
-        //mixedRealityCamera.SetActive(false);
-        enemies.SetActive(false);
-        arCamera.SetActive(true);
-        setUpCamera.SetActive(true);
-
-        playerHealth = player.GetComponent<PlayerHealth>();
+        playerParent.SetActive(false);
         shipHealth = ship.GetComponent<ShipHealth>();
+
+        if (useVuforia)
+        {
+            arCamera.SetActive(true);
+            setUpCamera.SetActive(true);
+        }
+        else
+        {
+            arCamera.SetActive(false);
+            setUpCamera.SetActive(false);
+            StartGame();
+        }
     }
 	
 	// Update is called once per frame
@@ -57,28 +69,45 @@ public class GameControl : MonoBehaviour {
 
     private void StartGame()
     {
-        gameStarted = true;
         Debug.Log("Game Started");
-        arCamera.SetActive(false);
-        setUpCamera.SetActive(false);
-        //playerParent.SetActive(true);
-        mixedRealityCamera.SetActive(true);
-        wallController.stop = true;
-        spaceShipsController.StartGame();
+        gameStarted = true;
 
+        playerParent.SetActive(true);
 
-        ProjectionController[] projectionControllers = ship.GetComponentsInChildren<ProjectionController>();
-
-        foreach (ProjectionController p in projectionControllers)
+        if (UnityEngine.XR.XRDevice.isPresent)
         {
-            p.enabled = false;
+            Debug.Log("Using VR Device");
+            mixedRealityCameraParent.SetActive(true);
+            fpsController.enabled = false;
+            fpsCharacter.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Not Using VR Device");
+            mixedRealityCameraParent.SetActive(false);
+            fpsController.enabled = true;
+            fpsCharacter.SetActive(true);
         }
 
-        if (SpawnEnemies)
-            enemies.SetActive(true);
+        if (useVuforia)
+        {
+            arCamera.SetActive(false);
+            setUpCamera.SetActive(false);
+            wallController.stop = true;
+
+            ProjectionController[] projectionControllers = ship.GetComponentsInChildren<ProjectionController>();
+            foreach (ProjectionController p in projectionControllers)
+            {
+                p.enabled = false;
+            }
+        }
+
+        enemies.SetActive(SpawnEnemies);
 
         if (StartSpline)
             splineController.StartGame();
+
+        spaceShipsController.StartGame();
     }
 
     public void DamageShip(int amount)

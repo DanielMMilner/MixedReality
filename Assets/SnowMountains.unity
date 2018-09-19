@@ -10224,6 +10224,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18dce33094a94f244b8310fd8d53a886, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1398522438 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1850730992894404, guid: d29bc40b7f3df26479d6a0aac211c355,
+    type: 2}
+  m_PrefabInternal: {fileID: 9490759}
 --- !u!4 &1398769675 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4362947050038328, guid: 8e8b425f37ed5f147a82e8a86c54d028,
@@ -12498,11 +12503,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400794, guid: a0caed2329b1ff545b145d48d6ef85d7, type: 2}
   m_PrefabInternal: {fileID: 832567253}
---- !u!1 &1819440208 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1372541880982678, guid: d29bc40b7f3df26479d6a0aac211c355,
-    type: 2}
-  m_PrefabInternal: {fileID: 9490759}
 --- !u!4 &1831578027 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400794, guid: a0caed2329b1ff545b145d48d6ef85d7, type: 2}
@@ -14887,8 +14887,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerParent: {fileID: 1878859350}
-  mixedRealityCamera: {fileID: 1819440208}
-  player: {fileID: 448826399}
+  fpsController: {fileID: 2124420039}
+  fpsCharacter: {fileID: 448826399}
+  mixedRealityCameraParent: {fileID: 1398522438}
+  playerHealth: {fileID: 448826405}
   ship: {fileID: 2033928913}
   arCamera: {fileID: 2133311470}
   setUpCamera: {fileID: 2103707487}
@@ -14896,8 +14898,9 @@ MonoBehaviour:
   enemies: {fileID: 1031830197}
   wallController: {fileID: 968975642}
   spaceShipsController: {fileID: 1288161546}
-  SpawnEnemies: 0
-  StartSpline: 0
+  SpawnEnemies: 1
+  StartSpline: 1
+  useVuforia: 1
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
