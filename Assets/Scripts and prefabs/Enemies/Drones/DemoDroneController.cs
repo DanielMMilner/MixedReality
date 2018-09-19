@@ -37,7 +37,7 @@ public class DemoDroneController : MonoBehaviour {
         for (int i = 0; i < pooledBullets; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab) as GameObject;
-            //bullet.transform.parent = gameObject.transform;
+            bullet.transform.parent = gameObject.transform.parent;
             bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
             bullet.SetActive(false);
             bullets.Enqueue(bullet);
@@ -53,7 +53,7 @@ public class DemoDroneController : MonoBehaviour {
             corpseLifespan -= Time.deltaTime;
             if(corpseLifespan < 0)
             {
-                Destroy(this.gameObject);
+                Destroy(gameObject.transform.parent.gameObject);
             }
         }
     }
