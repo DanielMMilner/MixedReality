@@ -8,6 +8,7 @@ public class TurretController : MonoBehaviour {
     private GameObject ship;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public Transform gunTransform;
     public float bulletSpeed = 5.0f;
     public float bulletLifespan = 5.0f;
     public float pooledBullets = 5;
@@ -17,11 +18,13 @@ public class TurretController : MonoBehaviour {
     public float cooldownTime = 1f;
     private Queue<GameObject> bullets;
     private float remainingCooldownTime = 0f;
+    private Animator animator;
 
     // Use this for initialization
     void Start () {
         ship = GameObject.FindWithTag("ShipTarget");
         remainingCooldownTime = cooldownTime;
+        animator = GetComponentInParent<Animator>();
 
         bullets = new Queue<GameObject>();
         for(int i = 0; i < pooledBullets; i++)
@@ -42,7 +45,9 @@ public class TurretController : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, ship.transform.position);
         if(distance < range)
         {
-            transform.LookAt(ship.transform);
+            animator.SetTrigger("Activate");
+
+            gunTransform.LookAt(ship.transform);
 
             RaycastHit hit;
             Vector3 rayDirection = ship.transform.position - bulletSpawn.transform.position;
@@ -52,7 +57,7 @@ public class TurretController : MonoBehaviour {
 
             if (Physics.Raycast(bulletSpawn.transform.position, rayDirection, out hit, range, layerMask))
             {
-                Debug.DrawRay(bulletSpawn.transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+                Debug.DrawRay(bulletSpawn.transform.position, gunTransform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
                     Shoot();
@@ -71,7 +76,7 @@ public class TurretController : MonoBehaviour {
             if (!bullet.activeSelf)
             {
                 bullet.transform.position = bulletSpawn.transform.position;
-                bullet.transform.rotation = transform.rotation;
+                bullet.transform.rotation = gunTransform.rotation;
                 bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
                 bullet.SetActive(true);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
