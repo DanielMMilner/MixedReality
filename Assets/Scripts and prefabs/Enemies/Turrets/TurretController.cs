@@ -61,16 +61,22 @@ public class TurretController : MonoBehaviour {
                 Debug.DrawRay(bulletSpawn.transform.position, gunTransform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
-                    if(!isFiring)
+                    if (!isFiring)
+                    {
                         animator.SetTrigger("Activate");
+                        isFiring = true;
+                    }
 
                     Shoot();
                 }
-                else
-                {
-                    isFiring = false;
-                    animator.SetTrigger("Deactivate");
-                }
+            }
+        }
+        else
+        {
+            if (isFiring)
+            {
+                animator.SetTrigger("Deactivate");
+                isFiring = false;
             }
         }
         remainingCooldownTime -= Time.fixedDeltaTime;
