@@ -20,6 +20,9 @@ public class TurretController : MonoBehaviour {
     private float remainingCooldownTime = 0f;
     private Animator animator;
 
+    private bool isFiring = false;
+
+
     // Use this for initialization
     void Start () {
         ship = GameObject.FindWithTag("ShipTarget");
@@ -45,8 +48,6 @@ public class TurretController : MonoBehaviour {
         float distance = Vector3.Distance(transform.position, ship.transform.position);
         if(distance < range)
         {
-            animator.SetTrigger("Activate");
-
             gunTransform.LookAt(ship.transform);
 
             RaycastHit hit;
@@ -60,7 +61,15 @@ public class TurretController : MonoBehaviour {
                 Debug.DrawRay(bulletSpawn.transform.position, gunTransform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
+                    if(!isFiring)
+                        animator.SetTrigger("Activate");
+
                     Shoot();
+                }
+                else
+                {
+                    isFiring = false;
+                    animator.SetTrigger("Deactivate");
                 }
             }
         }
