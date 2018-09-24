@@ -98,7 +98,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578898696264796}
-  - component: {fileID: 95175903386089746}
   m_Layer: 0
   m_Name: Enemy_Turret
   m_TagString: Untagged
@@ -144,6 +143,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4933791476419766}
+  - component: {fileID: 95564010477921490}
   m_Layer: 0
   m_Name: Enemy_Turret_1
   m_TagString: Untagged
@@ -301,7 +301,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788307180747360}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -49.79, y: 1.58, z: -106.54}
+  m_LocalPosition: {x: 12.55, y: 6.22, z: -47.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4947607881417526}
@@ -389,23 +389,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8087578, y: 0.9471204, z: 1.215828}
   m_Center: {x: -0.031751633, y: 0.54356015, z: 0.10791397}
---- !u!95 &95175903386089746
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1553267326192208}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aff14844470c7ed499ae29fa2779939b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95440091801548724
 Animator:
   serializedVersion: 3
@@ -416,6 +399,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 57deba1b0134b8844a19b024ee58829e, type: 3}
   m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95564010477921490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788307180747360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69d83fd9328241a45931e7bf37718f43, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -65,6 +65,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4998162881281064}
+  - component: {fileID: 95576039594375538}
   m_Layer: 0
   m_Name: Enemy_Turret_3
   m_TagString: Enemy
@@ -160,7 +161,6 @@ GameObject:
   - component: {fileID: 65088130783494562}
   - component: {fileID: 65689252939949688}
   - component: {fileID: 114873088050661912}
-  - component: {fileID: 95068833448313206}
   m_Layer: 0
   m_Name: TurretParent
   m_TagString: Enemy
@@ -176,7 +176,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4344784527603122}
-  - component: {fileID: 95813323416045648}
   m_Layer: 0
   m_Name: Enemy_Turret
   m_TagString: Enemy
@@ -402,34 +401,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 43.605812, y: 47.931435, z: 185.9024}
   m_Center: {x: -35.808178, y: 163.00192, z: 206.57272}
---- !u!95 &95068833448313206
+--- !u!95 &95576039594375538
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1525939756664304}
+  m_GameObject: {fileID: 1134063884968810}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 54593c27ebab7214ba4a6b02aaacb84d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2ab2038b493d54543b3966c250b8b19e, type: 2}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69d83fd9328241a45931e7bf37718f43, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95813323416045648
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1817753473949344}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 54593c27ebab7214ba4a6b02aaacb84d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
