@@ -32,15 +32,25 @@ public class PlayerGunController : MonoBehaviour {
         if (_bulletCooldown > 0f) {
             _bulletCooldown -= Time.deltaTime;
         }
+        if (_bulletCooldown <= 0f && Input.GetKey("joystick button 14"))
+        {
+
+            ShootBullet();
+        }
+        /*
         var interactionSourceStates = InteractionManager.GetCurrentReading();
         foreach (var interactionSourceState in interactionSourceStates)
         {
             if (interactionSourceState.selectPressed && _bulletCooldown <= 0f)
             {
-                ShootBullet();
+                if (Input.GetKey("Button 14"))
+                {
+
+                    ShootBullet();
+                }
             }
         }
-
+        */
         if (Input.GetKey(KeyCode.Mouse0) && _bulletCooldown <= 0f)
         {
             ShootBullet();
