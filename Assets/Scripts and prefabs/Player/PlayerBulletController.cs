@@ -14,7 +14,7 @@ public class PlayerBulletController : MonoBehaviour {
             Destroy(this.gameObject);
             if (other.tag.Equals("EnemyDrone"))
             {
-                other.GetComponent<DemoDroneController>().Died(transform.position);
+                other.GetComponent<DroneController>().Died(transform.position);
             }
             else if (other.tag.Equals("Enemy"))
             {

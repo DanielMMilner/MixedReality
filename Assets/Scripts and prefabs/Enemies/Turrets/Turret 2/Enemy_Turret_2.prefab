@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 4492120700027712}
   - component: {fileID: 114451372283624390}
   - component: {fileID: 65561725823771320}
-  - component: {fileID: 65985377922390972}
   m_Layer: 0
   m_Name: TurretParent
   m_TagString: Enemy
@@ -389,20 +388,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7948723, y: 0.98090553, z: 1.0993347}
-  m_Center: {x: 0.02660942, y: 0.56126595, z: 0.096069336}
---- !u!65 &65985377922390972
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1964277728659742}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.26917267, y: 0.18154049, z: 0.6910796}
-  m_Center: {x: 0.13164139, y: 0.7569717, z: 0.9955399}
+  m_Size: {x: 0.7948723, y: 1.5827751, z: 1.0993347}
+  m_Center: {x: 0.02660942, y: 0.86220074, z: 0.096069336}
 --- !u!95 &95447312966602934
 Animator:
   serializedVersion: 3

@@ -8,6 +8,5 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(int amount)
     {
         health -= amount;
-        //Debug.Log("Player Health: " + health);
     }
 }

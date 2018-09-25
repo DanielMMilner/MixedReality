@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* A pseudo state machine so the drone responds to the player */
 
-public class DemoDroneController : MonoBehaviour {
+public class DroneController : MonoBehaviour {
 
     [Header("Drone Movement Settings")]
     private Transform player;                
