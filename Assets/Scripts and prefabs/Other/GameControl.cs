@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.WSA.Input;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -16,6 +17,7 @@ public class GameControl : MonoBehaviour {
     public GameObject ship;
     public GameObject arCamera;
     public GameObject setUpCamera;
+    public GameObject overviewCamera;
     public SplineController splineController;
     public GameObject enemies;
     public WallController wallController;
@@ -26,12 +28,14 @@ public class GameControl : MonoBehaviour {
 
     private ShipHealth shipHealth;
     private bool gameStarted = false;
+    private Outline[] outlines;
 
 
     // Use this for initialization
     void Start () {
         playerParent.SetActive(false);
         shipHealth = ship.GetComponent<ShipHealth>();
+        outlines = enemies.GetComponentsInChildren<Outline>();
 
         if (useVuforia)
         {
@@ -65,12 +69,32 @@ public class GameControl : MonoBehaviour {
         {
             StartGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            ShowOverview(true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            ShowOverview(false);
+        }
+    }
+
+    private void ShowOverview(bool show)
+    {
+        overviewCamera.SetActive(show);
+
+        foreach(Outline outline in outlines)
+        {
+            outline.enabled = show;
+        }
     }
 
     private void StartGame()
     {
         Debug.Log("Game Started");
         gameStarted = true;
+        ShowOverview(false);
 
         playerParent.SetActive(true);
 
