@@ -10421,7 +10421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1031830198
 Transform:
   m_ObjectHideFlags: 0
@@ -21281,7 +21281,7 @@ MonoBehaviour:
   enemies: {fileID: 1031830197}
   wallController: {fileID: 968975642}
   spaceShipsController: {fileID: 1288161546}
-  SpawnEnemies: 1
+  SpawnEnemies: 0
   StartSpline: 1
   useVuforia: 1
 --- !u!4 &2089841637

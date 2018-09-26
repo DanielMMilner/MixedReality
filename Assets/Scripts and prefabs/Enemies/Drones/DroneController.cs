@@ -49,6 +49,9 @@ public class DroneController : MonoBehaviour {
     }
 
     void FixedUpdate () {
+        if (player == null)
+            return;
+
         if (isAlive)
         {
             Fly();

@@ -119,7 +119,11 @@ public class GameControl : MonoBehaviour {
 
         if (SpawnEnemies)
         {
-            CreateEnemies();
+            ShowEnemies();
+        }
+        else
+        {
+            enemies.SetActive(false);
         }
 
         if (StartSpline)
@@ -128,7 +132,7 @@ public class GameControl : MonoBehaviour {
         spaceShipsController.StartGame();
     }
 
-    private void CreateEnemies()
+    private void ShowEnemies()
     {
         DroneController[] drones = enemies.GetComponentsInChildren<DroneController>();
 
