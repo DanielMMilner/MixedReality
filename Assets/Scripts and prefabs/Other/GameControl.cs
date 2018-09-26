@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR.WSA.Input;
-using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameControl : MonoBehaviour {
-    public GameObject playerParent;
-
-    public FirstPersonController fpsController;
-    public GameObject fpsCharacter;
-
+    public GameObject fpsController;
+    public GameObject mixedRealityCamera;
     public GameObject mixedRealityCameraParent;
-
     public PlayerHealth playerHealth;
     public GameObject ship;
     public GameObject arCamera;
@@ -29,12 +21,12 @@ public class GameControl : MonoBehaviour {
     private ShipHealth shipHealth;
     private bool gameStarted = false;
     private Outline[] outlines;
+    private GameObject player;
 
 
     // Use this for initialization
     void Start () {
-        //playerParent.SetActive(false);
-        mixedRealityCameraParent.SetActive(false);
+        mixedRealityCamera.SetActive(false);
         shipHealth = ship.GetComponent<ShipHealth>();
         outlines = enemies.GetComponentsInChildren<Outline>();
 
@@ -97,21 +89,19 @@ public class GameControl : MonoBehaviour {
         gameStarted = true;
         ShowOverview(false);
 
-        playerParent.SetActive(true);
-
         if (UnityEngine.XR.XRDevice.isPresent)
         {
+            player = mixedRealityCamera;
             Debug.Log("Using VR Device");
-            mixedRealityCameraParent.SetActive(true);
-            fpsController.enabled = false;
-            fpsCharacter.SetActive(false);
+            mixedRealityCamera.SetActive(true);
+            Destroy(fpsController);
         }
         else
         {
+            player = fpsController;
             Debug.Log("Not Using VR Device");
-            mixedRealityCameraParent.SetActive(false);
-            fpsController.enabled = true;
-            fpsCharacter.SetActive(true);
+            fpsController.SetActive(true);
+            Destroy(mixedRealityCameraParent);
         }
 
         if (useVuforia)
@@ -127,12 +117,28 @@ public class GameControl : MonoBehaviour {
             }
         }
 
-        enemies.SetActive(SpawnEnemies);
+        if (SpawnEnemies)
+        {
+            CreateEnemies();
+        }
 
         if (StartSpline)
             splineController.StartGame();
 
         spaceShipsController.StartGame();
+    }
+
+    private void CreateEnemies()
+    {
+        DroneController[] drones = enemies.GetComponentsInChildren<DroneController>();
+
+        foreach (DroneController drone in drones)
+        {
+            //set the drones to target either the fpscontroller or the mixed reality camera.
+            drone.SetTarget(player);
+        }
+
+        enemies.SetActive(true);
     }
 
     public void DamageShip(int amount)

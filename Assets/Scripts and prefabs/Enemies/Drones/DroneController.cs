@@ -29,7 +29,6 @@ public class DroneController : MonoBehaviour {
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("MainCamera").transform;
         rb = GetComponent<Rigidbody>();
         rb.Sleep();
 
@@ -42,6 +41,11 @@ public class DroneController : MonoBehaviour {
             bullet.SetActive(false);
             bullets.Enqueue(bullet);
         }
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        player = target.transform;
     }
 
     void FixedUpdate () {

@@ -39,9 +39,9 @@ public class TurretController : MonoBehaviour {
             bullets.Enqueue(bullet);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         // Raycast to object
         // Determine distance between objects
 
