@@ -33,7 +33,8 @@ public class GameControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        playerParent.SetActive(false);
+        //playerParent.SetActive(false);
+        mixedRealityCameraParent.SetActive(false);
         shipHealth = ship.GetComponent<ShipHealth>();
         outlines = enemies.GetComponentsInChildren<Outline>();
 
