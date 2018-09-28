@@ -20,6 +20,7 @@ public class PlayerGunController : MonoBehaviour {
     public float bulletCooldown = 0.5f;
     private float _bulletCooldown = 0f;
 
+    public bool isLeft;
 
 	// Update is called once per frame
 	void Update () {
@@ -32,28 +33,20 @@ public class PlayerGunController : MonoBehaviour {
         if (_bulletCooldown > 0f) {
             _bulletCooldown -= Time.deltaTime;
         }
-        if (_bulletCooldown <= 0f && Input.GetKey("joystick button 14"))
-        {
 
-            ShootBullet();
-        }
-        /*
-        var interactionSourceStates = InteractionManager.GetCurrentReading();
-        foreach (var interactionSourceState in interactionSourceStates)
+        if (isLeft)
         {
-            if (interactionSourceState.selectPressed && _bulletCooldown <= 0f)
+            if (Input.GetKey("joystick button 14") && _bulletCooldown <= 0f)
             {
-                if (Input.GetKey("Button 14"))
-                {
-
-                    ShootBullet();
-                }
+                ShootBullet();
             }
         }
-        */
-        if (Input.GetKey(KeyCode.Mouse0) && _bulletCooldown <= 0f)
+        else
         {
-            ShootBullet();
+            if ((Input.GetKey("joystick button 15") || Input.GetKey(KeyCode.Mouse0)) && _bulletCooldown <= 0f)
+            {
+                ShootBullet();
+            }
         }
     }
 

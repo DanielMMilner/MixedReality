@@ -5782,7 +5782,7 @@ MonoBehaviour:
   AnimateControllerModel: 1
   AlwaysUseAlternateLeftModel: 1
   AlwaysUseAlternateRightModel: 1
-  AlternateLeftController: {fileID: 1077749993074682, guid: e5bae55f36c81584cb6f26508129bcae,
+  AlternateLeftController: {fileID: 1624143957605836, guid: a4147d66321d6dd4696a9d18d713f0e0,
     type: 2}
   AlternateRightController: {fileID: 1077749993074682, guid: e5bae55f36c81584cb6f26508129bcae,
     type: 2}
@@ -21282,7 +21282,7 @@ MonoBehaviour:
   wallController: {fileID: 968975642}
   spaceShipsController: {fileID: 1288161546}
   SpawnEnemies: 0
-  StartSpline: 1
+  StartSpline: 0
   useVuforia: 1
 --- !u!4 &2089841637
 Transform:

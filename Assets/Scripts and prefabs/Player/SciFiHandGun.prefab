@@ -496,3 +496,4 @@ MonoBehaviour:
   bulletSpeed: 45
   bulletLifespan: 7
   bulletCooldown: 0.3
+  isLeft: 0

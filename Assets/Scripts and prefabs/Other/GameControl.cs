@@ -63,11 +63,11 @@ public class GameControl : MonoBehaviour {
             StartGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
         {
             ShowOverview(true);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
         {
             ShowOverview(false);
         }
