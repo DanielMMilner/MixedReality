@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour {
     private Outline[] outlines;
     private GameObject player;
 
+    private bool overview = false;
 
     // Use this for initialization
     void Start () {
@@ -65,11 +66,20 @@ public class GameControl : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
         {
-            ShowOverview(true);
+            if (overview)
+            {
+                overview = false;
+                ShowOverview(false);
+            }
+            else
+            {
+                overview = true;
+                ShowOverview(true);
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
         {
-            ShowOverview(false);
+            //ShowOverview(false);
         }
     }
 
