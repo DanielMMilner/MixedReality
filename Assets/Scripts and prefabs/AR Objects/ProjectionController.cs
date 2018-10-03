@@ -14,12 +14,15 @@ public class ProjectionController : MonoBehaviour {
 
     public float rotation_offset = 0;
 
+    public bool stop = false; // Stop moving once setup
+
     void Start()
     {
         mesh = this.GetComponentsInChildren<MeshRenderer>();
     }
 	
 	void FixedUpdate () {
+        if (stop) return;
         // This checks if tracking has been lost.
         /*if (imageScript.someSortOfBooleanMethod()){
             return;

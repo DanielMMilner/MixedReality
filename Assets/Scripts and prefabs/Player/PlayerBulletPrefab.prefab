@@ -140,7 +140,7 @@ MonoBehaviour:
   m_templateMaterial: {fileID: 2100000, guid: 974b33ccbd786464a825203eb88b8dab, type: 2}
   m_doNotOverwriteTemplateMaterialProperties: 0
   m_startPos: {x: 0, y: 0, z: 0}
-  m_endPos: {x: 0, y: 0, z: 0.3}
-  m_lineColor: {r: 0.07586241, g: 0, b: 1, a: 1}
-  m_lineWidth: 0.05
-  m_lightSaberFactor: 0.96
+  m_endPos: {x: 0, y: 0, z: 0.2}
+  m_lineColor: {r: 0.1102941, g: 0.3741379, b: 1, a: 1}
+  m_lineWidth: 0.02
+  m_lightSaberFactor: 0.803

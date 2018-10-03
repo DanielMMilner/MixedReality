@@ -89,6 +89,7 @@ public class GameControl : MonoBehaviour {
         gameStarted = true;
         ShowOverview(false);
 
+
         if (UnityEngine.XR.XRDevice.isPresent)
         {
             player = mixedRealityCamera;
@@ -108,7 +109,7 @@ public class GameControl : MonoBehaviour {
         {
             arCamera.SetActive(false);
             setUpCamera.SetActive(false);
-            wallController.stop = true;
+            wallController.Stop();
 
             ProjectionController[] projectionControllers = ship.GetComponentsInChildren<ProjectionController>();
             foreach (ProjectionController p in projectionControllers)

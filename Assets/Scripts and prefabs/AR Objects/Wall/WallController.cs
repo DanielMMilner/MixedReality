@@ -20,7 +20,7 @@ public class WallController : MonoBehaviour {
     private float WALL_LENGTH = 3f;
 
     public GameObject ship;
-    public bool stop = false;
+    private bool stop = false;
 
     // Use this for initialization
     void Start () {
@@ -51,5 +51,12 @@ public class WallController : MonoBehaviour {
         wall.transform.rotation = Quaternion.LookRotation(delta);
         wall.transform.localScale = new Vector3(WALL_WIDTH, WALL_HEIGHT, delta.magnitude * WALL_LENGTH);
 	}
+
+    public void Stop()
+    {
+        this.stop = true;
+        wallMarker1.GetComponent<ProjectionController>().stop = true;
+        wallMarker2.GetComponent<ProjectionController>().stop = true;
+    }
 
 }

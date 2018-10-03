@@ -487,13 +487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8388b56b5bde6da4b9ac7fbb976cd8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilTime: 0.3
-  maxRecoil: 5
+  recoilTime: 0
+  maxRecoil: 2
   recoilSpeed: 10
   bulletPrefab: {fileID: 1009928122327970, guid: 003e064868fce924dac392dbfb4876bd,
     type: 2}
   bulletSpawn: {fileID: 4084734946514336}
-  bulletSpeed: 45
+  bulletSpeed: 200
   bulletLifespan: 7
-  bulletCooldown: 0.3
+  bulletCooldown: 0.1
   isLeft: 1
