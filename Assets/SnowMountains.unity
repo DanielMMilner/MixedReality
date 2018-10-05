@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31013866}
   - component: {fileID: 31013867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MouseXZTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3251,7 +3251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248369914}
   - component: {fileID: 248369915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JoystickXYTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4212,7 +4212,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 361825166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GazeControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5018,7 +5018,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448826399}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &448826403
 Camera:
   m_ObjectHideFlags: 0
@@ -6072,7 +6072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 567892959}
   - component: {fileID: 567892960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MotionControllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6190,7 +6190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575871585}
   - component: {fileID: 575871586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyboardXZTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9636,7 +9636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870551361}
   - component: {fileID: 870551362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MouseXYRotationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10098,7 +10098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904722074}
   - component: {fileID: 904722075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyboardXYTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10871,7 +10871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996390656}
   - component: {fileID: 996390657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyboardXYRotationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12625,6 +12625,8 @@ MonoBehaviour:
   timerStart: 1
   turretCamera: {fileID: 2041900460}
   player: {fileID: 1878859350}
+  VR_Gun: {fileID: 1352216016}
+  mouse_Gun: {fileID: 448826399}
 --- !u!65 &1142307930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14720,7 +14722,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1352216017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MotionControllerParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15012,7 +15014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397968246}
   - component: {fileID: 1397968247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MouseXYTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15111,7 +15113,7 @@ GameObject:
   - component: {fileID: 2064563546}
   - component: {fileID: 1398522440}
   - component: {fileID: 1398522439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MixedRealityCameraParent
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -15375,7 +15377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429659378}
   - component: {fileID: 1429659379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15423,7 +15425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431740616}
   - component: {fileID: 1431740617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyboardXZRotationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16619,48 +16621,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3aa4ca20a2bcf0b44901a64bed6296c8, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1538860472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1538860473}
-  - component: {fileID: 1538860474}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1538860473
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538860472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1574925478}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1538860474
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1538860472}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1539732567
 Prefab:
   m_ObjectHideFlags: 0
@@ -17131,7 +17091,7 @@ GameObject:
   - component: {fileID: 1574925480}
   - component: {fileID: 1574925479}
   - component: {fileID: 1574925484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MixedRealityCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -17152,7 +17112,6 @@ Transform:
   - {fileID: 361825166}
   - {fileID: 2115449950}
   - {fileID: 1429659378}
-  - {fileID: 1538860473}
   m_Father: {fileID: 2064563546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17254,8 +17213,8 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!136 &1574925484
-CapsuleCollider:
+--- !u!143 &1574925484
+CharacterController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -17263,9 +17222,13 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  serializedVersion: 2
   m_Height: 1.8
-  m_Direction: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 180
+  m_StepOffset: 0
+  m_SkinWidth: 0.05
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1576864828
 Prefab:
@@ -18242,7 +18205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705078614}
   - component: {fileID: 1705078615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JoystickXYRotationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19494,7 +19457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1844398308}
   - component: {fileID: 1844398309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JoystickXZTranslationAxis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22712,10 +22675,11 @@ MonoBehaviour:
   splineController: {fileID: 1081489439}
   enemies: {fileID: 1031830197}
   wallController: {fileID: 968975642}
+  turretProjectionController: {fileID: 1142307933}
   spaceShipsController: {fileID: 1288161546}
   SpawnEnemies: 1
-  StartSpline: 0
-  useVuforia: 0
+  StartSpline: 1
+  useVuforia: 1
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
@@ -23110,7 +23074,7 @@ GameObject:
   - component: {fileID: 2115449953}
   - component: {fileID: 2115449952}
   - component: {fileID: 2115449951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FadePlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

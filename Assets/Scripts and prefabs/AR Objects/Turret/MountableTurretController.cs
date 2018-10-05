@@ -6,6 +6,9 @@ public class MountableTurretController : MonoBehaviour {
     public GameObject turretCamera;
     public GameObject player;
 
+    public GameObject VR_Gun;
+    public GameObject mouse_Gun;
+
     private bool timerStarted = false;
     private bool inTurret = false;
     private MountableTurretGunController mountableTurretGunController;
@@ -41,7 +44,6 @@ public class MountableTurretController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.tag);
         if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
         {
             Debug.Log("Starting mountable turret timer");
@@ -56,6 +58,9 @@ public class MountableTurretController : MonoBehaviour {
             Debug.Log("Stopping mountable turret timer");
             timerStarted = false;
             timeLeft = timerStart;
+
+            if (inTurret)
+                ExitTurret();
         }
     }
 
@@ -67,7 +72,8 @@ public class MountableTurretController : MonoBehaviour {
         turretFPSController.enabled = true;
         mountableTurretGunController.enabled = true;
 
-        player.SetActive(false);
+        enablePlayerWeapon(false);
+
         turretCamera.SetActive(true);
     }
 
@@ -79,8 +85,21 @@ public class MountableTurretController : MonoBehaviour {
         turretFPSController.enabled = false;
         mountableTurretGunController.enabled = false;
 
-        player.SetActive(true);
+        enablePlayerWeapon(true);
+
         turretCamera.SetActive(false);
         timeLeft = timerStart;
+    }
+
+    private void enablePlayerWeapon(bool enable)
+    {
+        if (UnityEngine.XR.XRDevice.isPresent)
+        {
+            VR_Gun.SetActive(enable);
+        }
+        else
+        {
+            mouse_Gun.SetActive(enable);
+        }
     }
 }
