@@ -57,9 +57,9 @@ public class TurretController : MonoBehaviour {
 
             RaycastHit hit;
             Vector3 rayDirection = ship.transform.position - bulletSpawn.transform.position;
-            int layerMask = 1 << 9;
-            int layerMask2 = 1 << 2;
-            layerMask = ~(layerMask | layerMask2);
+            int layerMask = 1 << 9; //bullet layer
+            int layerMask2 = 1 << 2; //ignore raycast layer
+            layerMask = ~(layerMask | layerMask2); //hit everything else
 
             if (Physics.Raycast(bulletSpawn.transform.position, rayDirection, out hit, range, layerMask))
             {
