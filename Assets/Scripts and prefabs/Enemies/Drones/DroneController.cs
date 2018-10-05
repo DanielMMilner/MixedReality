@@ -21,6 +21,9 @@ public class DroneController : MonoBehaviour {
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
     private Rigidbody rb;
+    public ParticleSystem explosion;
+    public ParticleSystem emission;
+
 
     public float pooledBullets = 10;
     private Queue<GameObject> bullets;
@@ -31,6 +34,8 @@ public class DroneController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         rb.Sleep();
+        explosion.Stop();
+        emission.Stop();
 
         bullets = new Queue<GameObject>();
         for (int i = 0; i < pooledBullets; i++)
@@ -73,9 +78,11 @@ public class DroneController : MonoBehaviour {
         if (!_aggro && distanceToPlayer <= aggroRange)
         {
             _aggro = true;
+            emission.Play();
         } else if (distanceToPlayer > aggroRange)
         {
             _aggro = false;
+            emission.Stop();
         }
 
         // If not aggrod, do nothing
@@ -127,6 +134,8 @@ public class DroneController : MonoBehaviour {
         isAlive = false;
         rb.useGravity = true;
         rb.AddExplosionForce(50f, explosionPosition, 10f);
+        emission.Stop();
+        explosion.Play();
 
         foreach (GameObject x in bullets)
         {

@@ -13,6 +13,7 @@ public class TurretController : MonoBehaviour {
     public float bulletLifespan = 5.0f;
     public float pooledBullets = 5;
     public float range = 100;
+    public ParticleSystem explosion;
 
     // Time in seconds
     public float cooldownTime = 1f;
@@ -21,6 +22,7 @@ public class TurretController : MonoBehaviour {
     private Animator animator;
 
     private bool isFiring = false;
+    private bool isAlive = true;
 
 
     // Use this for initialization
@@ -28,6 +30,7 @@ public class TurretController : MonoBehaviour {
         ship = GameObject.FindWithTag("ShipTarget");
         remainingCooldownTime = cooldownTime;
         animator = GetComponentInParent<Animator>();
+        explosion.Stop();
 
         bullets = new Queue<GameObject>();
         for(int i = 0; i < pooledBullets; i++)
@@ -42,6 +45,8 @@ public class TurretController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (!isAlive)
+            return;
         // Raycast to object
         // Determine distance between objects
 
@@ -104,6 +109,9 @@ public class TurretController : MonoBehaviour {
 
     public void Destroyed()
     {
+        if (!isAlive)
+            return;
+
         foreach (GameObject bullet in bullets)
         {
             if (bullet.activeSelf)
@@ -112,6 +120,9 @@ public class TurretController : MonoBehaviour {
                 Destroy(bullet, bulletLifespan);
             }
         }
-        Destroy(gameObject);
+        explosion.Play();
+
+        isAlive = false;
+        //Destroy(gameObject);
     }
 }
