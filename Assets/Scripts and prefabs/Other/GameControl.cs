@@ -13,6 +13,7 @@ public class GameControl : MonoBehaviour {
     public SplineController splineController;
     public GameObject enemies;
     public WallController wallController;
+    public ProjectionController turretProjectionController;
     public SpaceShipsController spaceShipsController;
     public bool SpawnEnemies;
     public bool StartSpline;
@@ -105,14 +106,14 @@ public class GameControl : MonoBehaviour {
             player = mixedRealityCamera;
             Debug.Log("Using VR Device");
             mixedRealityCamera.SetActive(true);
-            Destroy(fpsController);
+            fpsController.SetActive(false);
         }
         else
         {
             player = fpsController;
             Debug.Log("Not Using VR Device");
             fpsController.SetActive(true);
-            Destroy(mixedRealityCameraParent);
+            mixedRealityCameraParent.SetActive(false);
         }
 
         if (useVuforia)
@@ -120,6 +121,7 @@ public class GameControl : MonoBehaviour {
             arCamera.SetActive(false);
             setUpCamera.SetActive(false);
             wallController.Stop();
+            turretProjectionController.stop = true;
 
             ProjectionController[] projectionControllers = ship.GetComponentsInChildren<ProjectionController>();
             foreach (ProjectionController p in projectionControllers)

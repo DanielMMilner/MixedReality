@@ -41,7 +41,8 @@ public class MountableTurretController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        //Debug.Log(other.tag);
+        if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
         {
             Debug.Log("Starting mountable turret timer");
             timerStarted = true;
@@ -50,7 +51,7 @@ public class MountableTurretController : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player") || other.CompareTag("MainCamera"))
         {
             Debug.Log("Stopping mountable turret timer");
             timerStarted = false;
