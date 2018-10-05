@@ -181,9 +181,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4546608966521030}
+  - component: {fileID: 54412618261595268}
+  - component: {fileID: 65882671085666866}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,9 +230,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699157882697244}
+  - component: {fileID: 54687970651858224}
+  - component: {fileID: 65614042058513414}
   m_Layer: 0
   m_Name: _B02
-  m_TagString: Untagged
+  m_TagString: InvisibleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +249,7 @@ GameObject:
   - component: {fileID: 4130224704793186}
   - component: {fileID: 114694241833462828}
   - component: {fileID: 65446986278378854}
+  - component: {fileID: 54755567534641036}
   m_Layer: 0
   m_Name: TurretParent
   m_TagString: Enemy
@@ -533,6 +538,51 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309890001078310}
   m_Mesh: {fileID: 4300000, guid: 57deba1b0134b8844a19b024ee58829e, type: 3}
+--- !u!54 &54412618261595268
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584132443430458}
+  serializedVersion: 2
+  m_Mass: 30
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54687970651858224
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905243812239990}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54755567534641036
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949172727508106}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65446986278378854
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -545,6 +595,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8087578, y: 1.5816753, z: 1.215828}
   m_Center: {x: -0.031751633, y: 0.8608376, z: 0.10791397}
+--- !u!65 &65614042058513414
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905243812239990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 108.59326, y: 137.92613, z: 125.38781}
+  m_Center: {x: -20.839537, y: -32.161747, z: 57.116024}
+--- !u!65 &65882671085666866
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1584132443430458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 124.97664, y: 85.438515, z: 412.45282}
+  m_Center: {x: 17.017317, y: 50.31017, z: 60.702217}
 --- !u!95 &95440091801548724
 Animator:
   serializedVersion: 3
@@ -611,6 +685,7 @@ MonoBehaviour:
     type: 2}
   bulletSpawn: {fileID: 4102571551517798}
   gunTransform: {fileID: 4546608966521030}
+  legs: {fileID: 4699157882697244}
   bulletSpeed: 20
   bulletLifespan: 5
   pooledBullets: 5

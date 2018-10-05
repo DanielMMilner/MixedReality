@@ -42,10 +42,7 @@ public class SplineController : MonoBehaviour {
         objToMove.transform.position = mathCurve.CalcPositionByDistance(distance);
 
         var heading = lookPoint - objToMove.transform.position;
+        heading.y = 0;
         objToMove.transform.rotation = Quaternion.LookRotation(heading);
-
-        Debug.DrawLine(lookPoint, objToMove.transform.position, Color.red);
-
     }
-
 }

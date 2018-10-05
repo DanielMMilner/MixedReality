@@ -9,6 +9,7 @@ public class TurretController : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public Transform gunTransform;
+    public Transform legs;
     public float bulletSpeed = 5.0f;
     public float bulletLifespan = 5.0f;
     public float pooledBullets = 5;
@@ -63,7 +64,7 @@ public class TurretController : MonoBehaviour {
 
             if (Physics.Raycast(bulletSpawn.transform.position, rayDirection, out hit, range, layerMask))
             {
-                Debug.DrawRay(bulletSpawn.transform.position, gunTransform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+                //Debug.DrawRay(bulletSpawn.transform.position, gunTransform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
                 if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
                     if (!isFiring)
@@ -111,6 +112,16 @@ public class TurretController : MonoBehaviour {
     {
         if (!isAlive)
             return;
+
+        Rigidbody[] rb = GetComponentsInChildren<Rigidbody>();
+
+        gunTransform.SetParent(transform.parent);
+        legs.SetParent(transform.parent);
+
+        foreach (Rigidbody r in rb)
+        {
+            r.isKinematic = false;
+        }
 
         foreach (GameObject bullet in bullets)
         {
