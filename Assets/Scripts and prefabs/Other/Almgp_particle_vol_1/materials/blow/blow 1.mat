@@ -80,7 +80,7 @@ Material:
     - _UVSec: 0
     - _UseVertexAlpha: 1
     - _ZWrite: 1
-    - _emmis_power: 13
+    - _emmis_power: 9
     - _exponent: 3
     - _power: 0
     m_Colors:
