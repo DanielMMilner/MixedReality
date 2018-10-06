@@ -5,6 +5,7 @@ public class MountableTurretGunController : MonoBehaviour {
     [Header("Bullet Settings")]
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public ParticleSystem muzzleFlash;
     public float bulletSpeed = 5.0f;
     public float bulletLifespan = 5.0f;
     public float bulletCooldown = 0.5f;
@@ -44,5 +45,7 @@ public class MountableTurretGunController : MonoBehaviour {
 
         Destroy(bullet, bulletLifespan);
         _bulletCooldown = bulletCooldown;
+
+        muzzleFlash.Play();
     }
 }
