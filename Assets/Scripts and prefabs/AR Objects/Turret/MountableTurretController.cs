@@ -72,7 +72,13 @@ public class MountableTurretController : MonoBehaviour {
         turretFPSController.enabled = true;
         mountableTurretGunController.enabled = true;
 
-        enablePlayerWeapon(false);
+        EnablePlayerWeapon(false);
+
+        if (UnityEngine.XR.XRDevice.isPresent)
+        {
+            //Adds an offset to the camera parent so the players view is correct
+            turretCamera.transform.parent.transform.localPosition = new Vector3(0.16f, 0.16f, 0.16f);
+        }
 
         turretCamera.SetActive(true);
     }
@@ -85,13 +91,13 @@ public class MountableTurretController : MonoBehaviour {
         turretFPSController.enabled = false;
         mountableTurretGunController.enabled = false;
 
-        enablePlayerWeapon(true);
+        EnablePlayerWeapon(true);
 
         turretCamera.SetActive(false);
         timeLeft = timerStart;
     }
 
-    private void enablePlayerWeapon(bool enable)
+    private void EnablePlayerWeapon(bool enable)
     {
         if (UnityEngine.XR.XRDevice.isPresent)
         {

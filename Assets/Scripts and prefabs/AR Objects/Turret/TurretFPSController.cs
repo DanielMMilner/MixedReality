@@ -5,19 +5,13 @@ public class TurretFPSController : MonoBehaviour
 {
     [SerializeField] private UnityStandardAssets.Characters.FirstPerson.MouseLook m_MouseLook;
 
-    private Camera m_Camera;
-
     public GameObject cannon;
     public float cannonRotationSpeed;
+    public float maxGunAngle;
+    public float minGunAngle;
+
     public float maxCannonAngle;
     public float minCannonAngle;
-
-
-    private void Start()
-    {
-        m_Camera = Camera.main;
-        m_MouseLook.Init(transform, m_Camera.transform);
-    }
 
     // Update is called once per frame
     private void Update()
@@ -28,15 +22,24 @@ public class TurretFPSController : MonoBehaviour
     private void RotateView()
     {
         float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-        
-        if (vertical > 0 && cannon.transform.right.y < minCannonAngle)
+
+        if (vertical > 0 && cannon.transform.right.y < minGunAngle)
         {
             cannon.transform.Rotate(0,-cannonRotationSpeed, 0);
-        }else if (vertical < 0 && cannon.transform.right.y > -maxCannonAngle)
+        }else if (vertical < 0 && cannon.transform.right.y > -maxGunAngle)
         {
             cannon.transform.Rotate(0, cannonRotationSpeed, 0);
         }
 
-        m_MouseLook.LookRotation(transform, m_Camera.transform);
+        float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+
+        if (horizontal > 0 && transform.forward.x < minCannonAngle)
+        {
+            transform.Rotate(0, cannonRotationSpeed, 0);
+        }
+        else if (horizontal < 0 && transform.forward.x > -maxCannonAngle)
+        {
+            transform.Rotate(0, -cannonRotationSpeed, 0);
+        }
     }
 }
