@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23759395619358584}
   m_Layer: 0
   m_Name: meshTerrain_2_16k_prefab
-  m_TagString: Untagged
+  m_TagString: Mounatins
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

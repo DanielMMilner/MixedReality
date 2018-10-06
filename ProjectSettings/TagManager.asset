@@ -16,6 +16,8 @@ TagManager:
   - InvisibleWall
   - EnemyDrone
   - ChangeSplineSpeed
+  - FxTemporaire
+  - Mounatins
   layers:
   - Default
   - TransparentFX

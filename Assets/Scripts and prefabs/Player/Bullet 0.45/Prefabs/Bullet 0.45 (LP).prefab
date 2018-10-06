@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 54534810685332110}
   - component: {fileID: 114520315850164434}
   - component: {fileID: 65327924409307228}
+  - component: {fileID: 114678673136048162}
   m_Layer: 0
   m_Name: Bullet 0.45 (LP)
   m_TagString: Bullet
@@ -490,4 +491,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 2}
+--- !u!114 &114678673136048162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a21aa76bbdb7fd499e4d39c37edcd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderExplosion: {fileID: 1876516633915996, guid: 781e1ee4c6b5e8d4a9c6aa416ba7cf84,
     type: 2}
