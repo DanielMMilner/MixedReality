@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.94482756, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.51724136, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
@@ -686,7 +686,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4944525553529756}
   gunTransform: {fileID: 4337346815422836}
   legs: {fileID: 4894524368082480}
-  bulletSpeed: 13
+  bulletSpeed: 20
   bulletLifespan: 20
   pooledBullets: 5
   range: 100

@@ -14,6 +14,9 @@ public class SplineController : MonoBehaviour {
     public float distance = 0;
 
     public float lookPointDist = 10;
+
+    public bool isOverviewSpline = false;
+
     private Vector3 lookPoint;
 
     private bool start = false;
@@ -22,11 +25,6 @@ public class SplineController : MonoBehaviour {
     void Start () {
         mathCurve = GetComponent<BGCcMath>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
 
     public void StartGame() {
         this.start = true;
@@ -35,7 +33,6 @@ public class SplineController : MonoBehaviour {
     private void FixedUpdate()
     {
         if (!start) return;
-        //d = s * t
         distance += speed * Time.fixedDeltaTime;
 
         lookPoint = mathCurve.CalcPositionByDistance(distance + lookPointDist);
@@ -44,5 +41,9 @@ public class SplineController : MonoBehaviour {
         var heading = lookPoint - objToMove.transform.position;
         heading.y = 0;
         objToMove.transform.rotation = Quaternion.LookRotation(heading);
+
+        //Restart Spline
+        if (distance > 880 && isOverviewSpline)
+            distance = 0;
     }
 }

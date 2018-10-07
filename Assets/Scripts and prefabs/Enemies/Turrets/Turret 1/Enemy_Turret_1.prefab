@@ -686,7 +686,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4102571551517798}
   gunTransform: {fileID: 4546608966521030}
   legs: {fileID: 4699157882697244}
-  bulletSpeed: 20
+  bulletSpeed: 25
   bulletLifespan: 5
   pooledBullets: 5
   range: 100

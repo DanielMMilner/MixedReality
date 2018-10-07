@@ -9,12 +9,18 @@ public class GameControl : MonoBehaviour {
     public GameObject ship;
     public GameObject arCamera;
     public GameObject setUpCamera;
-    public GameObject overviewCamera;
     public SplineController splineController;
+
     public GameObject enemies;
     public WallController wallController;
     public ProjectionController turretProjectionController;
     public SpaceShipsController spaceShipsController;
+
+    public GameObject overviewParent;
+    public SplineController overviewSplineController;
+    public GameObject overviewCamera;
+    private bool overview = false;
+
     public bool SpawnEnemies;
     public bool StartSpline;
     public bool useVuforia;
@@ -24,13 +30,17 @@ public class GameControl : MonoBehaviour {
     private Outline[] outlines;
     private GameObject player;
 
-    private bool overview = false;
 
     // Use this for initialization
     void Start () {
         mixedRealityCamera.SetActive(false);
         shipHealth = ship.GetComponent<ShipHealth>();
         outlines = enemies.GetComponentsInChildren<Outline>();
+
+        foreach (Outline outline in outlines)
+        {
+            outline.enabled = false;
+        }
 
         if (useVuforia)
         {
@@ -78,17 +88,14 @@ public class GameControl : MonoBehaviour {
                 ShowOverview(true);
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
-        {
-            //ShowOverview(false);
-        }
     }
 
     private void ShowOverview(bool show)
     {
-        overviewCamera.SetActive(show);
+        overviewParent.SetActive(show);
+        overviewSplineController.StartGame();
 
-        foreach(Outline outline in outlines)
+        foreach (Outline outline in outlines)
         {
             outline.enabled = show;
         }
@@ -100,6 +107,7 @@ public class GameControl : MonoBehaviour {
         gameStarted = true;
         ShowOverview(false);
 
+        Destroy(overviewParent);
 
         if (UnityEngine.XR.XRDevice.isPresent)
         {
