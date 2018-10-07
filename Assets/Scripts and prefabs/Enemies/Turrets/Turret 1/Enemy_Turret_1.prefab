@@ -681,17 +681,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050d610323fb41e4c977ef5cdb625b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1151669551754150, guid: 68a5af18b69cc7d478e831c417922073,
+  bulletPrefab: {fileID: 1253219135477642, guid: 37341ddf153efaa4495f2ae9956a0e1a,
     type: 2}
   bulletSpawn: {fileID: 4102571551517798}
   gunTransform: {fileID: 4546608966521030}
   legs: {fileID: 4699157882697244}
   bulletSpeed: 25
   bulletLifespan: 5
-  pooledBullets: 5
+  pooledBullets: 3
   range: 100
   explosion: {fileID: 198868813278240148}
-  cooldownTime: 1
+  cooldownTime: 4
 --- !u!137 &137133077662115912
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

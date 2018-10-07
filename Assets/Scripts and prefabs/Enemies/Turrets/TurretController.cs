@@ -134,6 +134,5 @@ public class TurretController : MonoBehaviour {
         explosion.Play();
 
         isAlive = false;
-        //Destroy(gameObject);
     }
 }

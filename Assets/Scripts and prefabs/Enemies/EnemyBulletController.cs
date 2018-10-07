@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,11 +31,13 @@ public class EnemyBulletController : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.tag.Equals("Enemy") && !other.tag.Equals("Bullet") && !other.tag.Equals("EnemyDrone") && !other.tag.Equals("InvisibleWall") && !other.tag.Equals("ChangeSplineSpeed"))
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            if(explosion != null)
+                Instantiate(explosion, transform.position, Quaternion.Euler(-transform.position.x, transform.position.y, -transform.position.z));
 
             DisableBullet();
 

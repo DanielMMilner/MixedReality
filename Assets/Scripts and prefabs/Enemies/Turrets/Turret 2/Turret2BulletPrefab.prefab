@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114327347350966272}
   m_Layer: 9
   m_Name: Turret2BulletPrefab
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ee9f4adc9ab2d42835ba97b077aea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 198358362391004328, guid: ebcde507a2edbcc4da3ad7810a6b6965,
+  explosion: {fileID: 198683048427119226, guid: 8c0279f055d763743afbe7bdbf85a396,
     type: 2}
   damage: 50
 --- !u!114 &114893134056870080

@@ -3661,8 +3661,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.310457, y: 34.97711, z: 124.24004}
-  m_Center: {x: -0.061607327, y: -9.018402, z: -5.223085}
+  m_Size: {x: 26.094505, y: 34.97711, z: 124.24004}
+  m_Center: {x: -0.24009334, y: -9.018402, z: -5.223085}
 --- !u!4 &239830020 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4843501835764428, guid: 3aa4ca20a2bcf0b44901a64bed6296c8,
@@ -13915,7 +13915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToMove: {fileID: 2104572143}
-  speed: 8
+  speed: 80
   distance: 0
   lookPointDist: 15
   isOverviewSpline: 0
@@ -26329,7 +26329,7 @@ MonoBehaviour:
   overviewCamera: {fileID: 441133755}
   SpawnEnemies: 1
   StartSpline: 1
-  useVuforia: 1
+  useVuforia: 0
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0
