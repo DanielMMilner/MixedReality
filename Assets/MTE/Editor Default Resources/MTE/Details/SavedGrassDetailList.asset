@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1093917602, guid: 4dc62f8096710224884df51cf0a153e9, type: 3}
+  m_Name: SavedGrassDetailList
+  m_EditorClassIdentifier: 
+  "\u202E\u200E\u202B\u200E\u200D\u200E\u206D\u202D\u202E\u202B\u206D\u206A\u202C\u200F\u200E\u200F\u206E\u202C\u200B\u202A\u202A\u206E\u200C\u202A\u202D\u206E\u206A\u206D\u202E\u200F\u206F\u202A\u200E\u202C\u200D\u200D\u200E\u202E\u202A\u200E\u202E":
+  - material: {fileID: 2100000, guid: 4443440ce13bad949a5fa059aaa77466, type: 2}
+    minWidth: 0.1
+    maxWidth: 0.2
+    minHeight: 0.1
+    maxHeight: 0.2
+    grassType: 1
