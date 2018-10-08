@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050d610323fb41e4c977ef5cdb625b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1255195951828584, guid: d3368dfbb56932341a39def88105aa69,
+  bulletPrefab: {fileID: 1159437954961054, guid: 96613a43fd50b2b47935ee58aa5f646a,
     type: 2}
   bulletSpawn: {fileID: 4812764355768954}
   gunTransform: {fileID: 4371676092160914}
@@ -673,6 +673,7 @@ MonoBehaviour:
   pooledBullets: 50
   range: 100
   explosion: {fileID: 198848765533609128}
+  isRocketLauncher: 0
   cooldownTime: 0.05
 --- !u!137 &137939144064183410
 SkinnedMeshRenderer:
