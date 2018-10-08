@@ -40,12 +40,12 @@ public class MountableTurretGunController : MonoBehaviour {
 
     void ShootBullet()
     {
+        muzzleFlash.Play();
+
         var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
 
         Destroy(bullet, bulletLifespan);
         _bulletCooldown = bulletCooldown;
-
-        muzzleFlash.Play();
     }
 }

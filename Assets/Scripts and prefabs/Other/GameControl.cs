@@ -108,6 +108,8 @@ public class GameControl : MonoBehaviour {
         ShowOverview(false);
 
         Destroy(overviewParent);
+        Destroy(setUpCamera);
+        Destroy(arCamera);
 
         if (UnityEngine.XR.XRDevice.isPresent)
         {
@@ -126,8 +128,6 @@ public class GameControl : MonoBehaviour {
 
         if (useVuforia)
         {
-            arCamera.SetActive(false);
-            setUpCamera.SetActive(false);
             wallController.Stop();
             turretProjectionController.stop = true;
 
