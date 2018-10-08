@@ -691,6 +691,7 @@ MonoBehaviour:
   pooledBullets: 3
   range: 100
   explosion: {fileID: 198868813278240148}
+  isRocketLauncher: 1
   cooldownTime: 4
 --- !u!137 &137133077662115912
 SkinnedMeshRenderer:

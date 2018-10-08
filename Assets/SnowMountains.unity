@@ -13915,7 +13915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objToMove: {fileID: 2104572143}
-  speed: 80
+  speed: 8
   distance: 0
   lookPointDist: 15
   isOverviewSpline: 0
@@ -26329,7 +26329,7 @@ MonoBehaviour:
   overviewCamera: {fileID: 441133755}
   SpawnEnemies: 1
   StartSpline: 1
-  useVuforia: 0
+  useVuforia: 1
 --- !u!4 &2089841637
 Transform:
   m_ObjectHideFlags: 0

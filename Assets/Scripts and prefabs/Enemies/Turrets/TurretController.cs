@@ -15,6 +15,7 @@ public class TurretController : MonoBehaviour {
     public float pooledBullets = 5;
     public float range = 100;
     public ParticleSystem explosion;
+    public bool isRocketLauncher;
 
     // Time in seconds
     public float cooldownTime = 1f;
@@ -38,9 +39,21 @@ public class TurretController : MonoBehaviour {
         {
             GameObject bullet = Instantiate (bulletPrefab) as GameObject;
             bullet.transform.parent = gameObject.transform;
-            bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
+            ResetBullet(bullet);
             bullet.SetActive(false);
             bullets.Enqueue(bullet);
+        }
+    }
+
+    private void ResetBullet(GameObject bullet)
+    {
+        if (isRocketLauncher)
+        {
+            bullet.GetComponent<EnemyRocketController>().Reset(bulletLifespan);
+        }
+        else
+        {
+            bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
         }
     }
 
@@ -98,7 +111,7 @@ public class TurretController : MonoBehaviour {
             {
                 bullet.transform.position = bulletSpawn.transform.position;
                 bullet.transform.rotation = gunTransform.rotation;
-                bullet.GetComponent<EnemyBulletController>().Reset(bulletLifespan);
+                ResetBullet(bullet);
                 bullet.SetActive(true);
                 bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
             }
