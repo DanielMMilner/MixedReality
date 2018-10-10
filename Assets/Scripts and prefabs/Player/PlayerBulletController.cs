@@ -9,7 +9,7 @@ public class PlayerBulletController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Bullet") && !other.CompareTag("InvisibleWall") && !other.CompareTag("ChangeSplineSpeed"))
+        if (other.CompareTag("EnemyDrone") || other.CompareTag("Enemy") || other.CompareTag("Mounatins"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);

@@ -24,7 +24,7 @@ public class PlayerGunController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        UpdateRecoil();
+        //UpdateRecoil();
         Fire();
 	}
 
@@ -58,7 +58,7 @@ public class PlayerGunController : MonoBehaviour {
         Destroy(bullet, bulletLifespan);
         _bulletCooldown = bulletCooldown;
 
-        StartRecoil(recoilTime, maxRecoil, recoilSpeed);
+        //StartRecoil(recoilTime, maxRecoil, recoilSpeed);
     }
 
 

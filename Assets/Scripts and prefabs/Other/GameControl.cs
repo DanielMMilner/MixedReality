@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour {
     public WallController wallController;
     public ProjectionController turretProjectionController;
     public SpaceShipsController spaceShipsController;
+    public GameObject motionControllers;
 
     public GameObject overviewParent;
     public SplineController overviewSplineController;
@@ -75,7 +76,8 @@ public class GameControl : MonoBehaviour {
             StartGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey("joystick button 4") || Input.GetKey("joystick button 5"))
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 5"))
         {
             if (overview)
             {
@@ -117,6 +119,13 @@ public class GameControl : MonoBehaviour {
             Debug.Log("Using VR Device");
             mixedRealityCamera.SetActive(true);
             fpsController.SetActive(false);
+
+            //motionControllers.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            //motionControllers.transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+
+            foreach(MeshRenderer mesh in motionControllers.GetComponentsInChildren<MeshRenderer>()) {
+                mesh.enabled = true;  
+            }
         }
         else
         {

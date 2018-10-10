@@ -21,7 +21,6 @@ public class DroneController : MonoBehaviour {
     public float bulletCooldown = 0.5f;     // Time between attacks
     private float _bulletCooldown = 0f;     // Internal countdown of bulletCooldown
     private Rigidbody rb;
-    public ParticleSystem explosion;
     public ParticleSystem emission;
 
 
@@ -34,7 +33,6 @@ public class DroneController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         rb.Sleep();
-        explosion.Stop();
         emission.Stop();
 
         bullets = new Queue<GameObject>();
@@ -131,11 +129,12 @@ public class DroneController : MonoBehaviour {
 
     public void Died(Vector3 explosionPosition)
     {
+        if (!isAlive)
+            return;
         isAlive = false;
         rb.useGravity = true;
         rb.AddExplosionForce(50f, explosionPosition, 10f);
         emission.Stop();
-        explosion.Play();
 
         foreach (GameObject x in bullets)
         {

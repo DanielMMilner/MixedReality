@@ -377,7 +377,6 @@ MonoBehaviour:
   bulletSpeed: 35
   bulletLifespan: 15
   bulletCooldown: 1
-  explosion: {fileID: 198476705610176074}
   emission: {fileID: 198022500144663146}
   pooledBullets: 7
   corpseLifespan: 15
