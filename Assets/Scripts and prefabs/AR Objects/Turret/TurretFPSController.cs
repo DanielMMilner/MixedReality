@@ -23,6 +23,9 @@ public class TurretFPSController : MonoBehaviour
     {
         float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
+        if (vertical == 0)
+            vertical = CrossPlatformInputManager.GetAxis("TurretTurnOtherVertical"); ;
+
         if (vertical > 0 && cannon.transform.right.y < minGunAngle)
         {
             cannon.transform.Rotate(0,-cannonRotationSpeed, 0);
@@ -32,6 +35,9 @@ public class TurretFPSController : MonoBehaviour
         }
 
         float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+
+        if (horizontal == 0)
+            horizontal = CrossPlatformInputManager.GetAxis("TurretTurnOtherHorizontal"); ;
 
         if (horizontal > 0 && transform.forward.x < minCannonAngle)
         {

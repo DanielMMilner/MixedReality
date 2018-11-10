@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1625023635926356
 GameObject:
   m_ObjectHideFlags: 1
@@ -269,7 +269,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686551926218486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0123215, y: 3.70864, z: 40.86}
+  m_LocalPosition: {x: -23.670002, y: 10.2, z: 22.849998}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4303363485584178}
@@ -370,11 +370,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aggroRange: 60
   stoppingRange: 4
-  flightSpeed: 0.1
+  flightSpeed: 0.05
   bulletPrefab: {fileID: 1534350735786846, guid: a52e10e476e334743aad1a78d1663c7b,
     type: 2}
   bulletSpawn: {fileID: 4870500006169908}
-  bulletSpeed: 35
+  bulletSpeed: 40
   bulletLifespan: 15
   bulletCooldown: 1
   emission: {fileID: 198022500144663146}

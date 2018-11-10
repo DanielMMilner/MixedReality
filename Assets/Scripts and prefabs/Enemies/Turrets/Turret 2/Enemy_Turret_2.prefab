@@ -686,11 +686,12 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4944525553529756}
   gunTransform: {fileID: 4337346815422836}
   legs: {fileID: 4894524368082480}
-  bulletSpeed: 100
+  bulletSpeed: 50
   bulletLifespan: 20
   pooledBullets: 5
   range: 100
   explosion: {fileID: 198388724522109950}
+  isRocketLauncher: 0
   cooldownTime: 5
 --- !u!137 &137045657560717270
 SkinnedMeshRenderer:
