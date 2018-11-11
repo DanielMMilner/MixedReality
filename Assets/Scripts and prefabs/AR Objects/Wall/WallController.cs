@@ -16,7 +16,7 @@ public class WallController : MonoBehaviour {
     private GameObject wall;
     private MeshRenderer wallMesh;
     private float WALL_WIDTH = 0.2f;
-    private float WALL_HEIGHT = 4f;
+    private float WALL_HEIGHT = 2.5f;
     private float WALL_LENGTH = 3f;
 
     public GameObject ship;
@@ -28,8 +28,7 @@ public class WallController : MonoBehaviour {
         wallScript2 = wallImageTarget2.GetComponent<CustomTrackableEventHandler>();
         wall = Instantiate(wallPrefab) as GameObject;
         wall.transform.parent = this.transform;
-        wallMesh = wall.GetComponent<MeshRenderer>();
-        
+        wallMesh = wall.GetComponent<MeshRenderer>();        
 	}
 
     // Update is called once per frame
