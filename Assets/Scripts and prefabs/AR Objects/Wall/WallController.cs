@@ -39,6 +39,20 @@ public class WallController : MonoBehaviour {
             wallMesh.enabled = false;
             return;
         }
+
+        UpdateShieldWall();
+    }
+
+    public void Stop()
+    {
+        this.stop = true;
+        wallMarker1.GetComponent<ProjectionController>().stop = true;
+        wallMarker2.GetComponent<ProjectionController>().stop = true;
+        UpdateShieldWall();
+    }
+
+    private void UpdateShieldWall()
+    {
         wallMesh.enabled = true;
         Vector3 delta = wallMarker1.transform.position - wallMarker2.transform.position;
         wall.transform.position = new Vector3(
@@ -49,13 +63,5 @@ public class WallController : MonoBehaviour {
 
         wall.transform.rotation = Quaternion.LookRotation(delta);
         wall.transform.localScale = new Vector3(WALL_WIDTH, WALL_HEIGHT, delta.magnitude * WALL_LENGTH);
-	}
-
-    public void Stop()
-    {
-        this.stop = true;
-        wallMarker1.GetComponent<ProjectionController>().stop = true;
-        wallMarker2.GetComponent<ProjectionController>().stop = true;
     }
-
 }
