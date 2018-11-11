@@ -23,10 +23,6 @@ public class ProjectionController : MonoBehaviour {
 	
 	void FixedUpdate () {
         if (stop) return;
-        // This checks if tracking has been lost.
-        /*if (imageScript.someSortOfBooleanMethod()){
-            return;
-        }*/
 
         if (imageTarget.transform.position.x > shipCentre.transform.position.x + SHIP_WIDTH ||
             imageTarget.transform.position.x < shipCentre.transform.position.x - SHIP_WIDTH || 
